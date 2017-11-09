@@ -6,13 +6,13 @@ layout: default
 
       <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
         <div class="my-auto">
-          <h1 class="mb-0">Victor
-            <span class="text-primary">Holanda</span>
+          <h1 class="mb-0">{{site.firstname}}
+            <span class="text-primary">{{site.lastname}}</span>
           </h1>
-          <div class="subheading mb-5">Teresina, Piauí ·
+          <div class="subheading mb-5">{{site.my_location}} ·
             <a href="mailto:{{site.email}}">{{site.email}}</a>
           </div>
-          <p class="mb-5">Amante de tecnologia, gestão e projetos. Com dedicação, sigo em busca de alcançar todos os meus objetivos pessoais, acadêmicos e profissionais.</p>
+          <p class="mb-5">{{site.description}}</p>
           <ul class="list-inline list-social-icons mb-0">
            {% include contact.html %}
           </ul>

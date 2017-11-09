@@ -9,14 +9,15 @@ layout: default
     <div class="row">
        <section class="resume-section p-3 p-lg-5 d-flex d-column" id="blog">
         <div class="my-auto">
-          <h1 class="mb-0">Victor
-            <span class="text-primary">Holanda</span>
+          <h1 class="mb-0">{{site.firstname}}
+            <span class="text-primary">{{site.lastname}}</span>
           </h1>
-          <div class="subheading mb-5">Teresina, Piauí ·
-            <a href="mailto:jvictor_holanda@outlook.com">jvictor_holanda@outlook.com</a>
+          <div class="subheading mb-5">{{site.my_location}} ·
+            <a href="mailto:{{site.email}}">{{site.email}}</a>
           </div>
+
           <h2 class="mb-5">404</h2>
-          <p class="mb-5">Página não encontrada :(</p>
+          <h4 class="mb-5">Página não encontrada :(</h4>
           
           <ul class="list-inline list-social-icons mb-0">
             {% include contact.html %}
