@@ -21,9 +21,7 @@ baseurl: "" # the subpath of your site, e.g. /blog
 url: "https://victorholanda21.github.io/"
 
 description: >- # this means to ignore newlines until "baseurl:"
-  Write an awesome description for your new site here. You can edit this
-  line in _config.yml. It will appear in your document head meta (for
-  Google search results) and in your feed.xml site description.
+  Amante de tecnologia, gestão e projetos. Com dedicação, sigo em busca de alcançar todos os meus objetivos pessoais, acadêmicos e profissionais.
 
 github_username: VictorHolanda21
 facebook_username: victorholanda21
