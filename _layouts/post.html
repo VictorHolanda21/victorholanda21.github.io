@@ -11,13 +11,18 @@ layout: default
             <h1 class="mb-0">{{page.title}}
             </h1>
             {% if page.subtitle %}
-              <p class="mb-5">
+              <h3 class="mb-5">
                 {{page.subtitle}}
-              </p>
+              </h3>
             {% endif %}
-           <span class="meta">Publicado por
+           <span class="meta">Por
                   <a href="#">{{page.author}}</a>
-                  em {{ page.date | date: "%d %b %Y" }}</span>
+                  em {{ page.date | date: "%d %b %Y" }}
+                  <i class="fa fa-folder-open" aria-hidden="true"></i>
+                  <a href="#">
+                    {{ page.category }}  
+                  </a>
+            </span>
           </div>
         </section>
       </div>
@@ -32,6 +37,14 @@ layout: default
           <div class="col-lg-8 col-md-10 mx-auto">
             
         	{{content}}
+
+          <div class="clearfix">
+              <p>Tópicos:
+                {% for tag in page.tags %}
+                  <a href="#" class="badge badge-light">{{tag}}</a>
+                {% endfor %}
+              </p>
+            </div>
 
           </div>
         </div>
