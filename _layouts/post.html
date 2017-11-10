@@ -1,0 +1,63 @@
+---
+layout: default
+---
+
+<!-- Blog Section -->
+
+<div class="row">
+       <section class="resume-section p-3 p-lg-5 d-flex d-column" id="post">
+        <div class="my-auto">
+          <h1 class="mb-0">{{page.title}}
+          </h1>
+          {% if page.subtitle %}
+          	<p class="mb-5">
+          		{{page.subtitle}}
+          	</p>
+          {% endif %}
+         <span class="meta">Publicado por
+                <a href="#">{{page.author}}</a>
+                em {{ page.date | date: "%d %b %Y" }}</span>
+        </div>
+      </section>
+    </div>
+
+
+
+<!-- Main Content -->
+     <!-- Post Content -->
+    <article>
+      <div class="container">
+        <div class="row">
+          <div class="col-lg-8 col-md-10 mx-auto">
+            
+        	{{content}}
+
+          </div>
+        </div>
+      </div>
+    </article>
+
+<!-- End Blog Section -->
+
+<hr>
+
+		<div class=clearfix>
+          
+          {% if page.previous.url %}
+            <a  class="btn btn-primary" href="{{ page.previous.url | prepend: site.baseurl }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">
+              &larr; Posts recentes
+            </a>
+          {% endif %}
+
+
+          {% if page.next.url %}
+            <a class="btn btn-primary float-right" href="{{ page.next.url | prepend: site.baseurl }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">
+             Posts Antigos &rarr;
+            </a>
+          {% endif %}
+
+
+        </div>
+
+
+<hr>

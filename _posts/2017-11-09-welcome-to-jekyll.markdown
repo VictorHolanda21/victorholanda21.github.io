@@ -1,6 +1,8 @@
 ---
 layout: post
 title:  "Welcome to Jekyll!"
+subtitle: "How to add new posts in jekyll"
+author: Jekyll
 date:   2017-11-09 16:07:13 -0300
 categories: jekyll update
 ---
