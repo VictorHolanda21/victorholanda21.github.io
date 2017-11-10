@@ -4,6 +4,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
     <meta name="description" content="{{ site.description }}">
     <meta name="author" content="{{ site.copyright_name }}">
+    <meta name="keywords" content="Blog Pessoal, Victor Holanda, Administração, Tecnologia, Teresina, Piaui">
 
     <title>{% if page.title %} {{ page.title }} | {% endif %} {{site.title}}</title>
 
@@ -19,5 +20,40 @@
 
     <!-- Custom styles for this template -->
     <link href="{{ '/css/victorresume.css' | prepend: site.baseurl }}" rel="stylesheet">
+
+
+     <!-- Meta Tags Open Graph Protocol. See more: http://ogp.me/ -->
+
+     <meta property="og:locale" content="pt_BR">
+     <meta property="og:locale:alternate" content="en_US">
+     <meta property="og:locale:alternate" content="es_ES">
+     <meta property="og:site_name" content="{{site.title}}">
+     <meta property="og:title" content="{% if page.title %} {{ page.title }} | {% endif %} {{site.title}}">
+     <meta property="og:url" content="{{ page.url | prepend: site.url}}">
+
+
+
+     {% if page.url contains "201" %}
+     
+     <meta property="og:type" content="article">
+     <meta property="article:author" content="{{page.author}}">
+     <meta property="article:section" content="{{page.categories}}">
+     <meta property="article:tag" content="{% for tag in page.tags %} {{tag}}, {% endfor %}">
+     <meta property="article:published_time" content="{{ page.date | date: '%Y-%m-%-d'}}">
+     <meta property="og:description" content="{{page.subtitle}}">
+
+     {% else %}
+
+     <meta property="og:type" content="website">
+     <meta property="type:author" content="{{site.copyright_name}}">
+     <meta property="og:description" content="{{page.description}}">
+
+     {% endif %}
+
+    <meta property="og:image" content="{{site.avatar}}">
+    <meta property="og:image:type" content="image/jpg">
+    <meta property="og:image:width" content="460">
+    <meta property="og:image:height" content="460">
+
 
   </head>
