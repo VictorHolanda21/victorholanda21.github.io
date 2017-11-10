@@ -36,6 +36,11 @@ my_location: Teresina, Piauí
 
 avatar: https://avatars3.githubusercontent.com/u/12675056?s=400&u=75e88e527d6365ce28f32f239e4ef9ee8ae88190&v=4
 
+# Google Analytics
+# To enable google analytics, uncomment below line with a valid Google Tracking ID
+google_tracking_id: UA-89341013-1
+
+
 timezone: America/Fortaleza
 
 # Build settings

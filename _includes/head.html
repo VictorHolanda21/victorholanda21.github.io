@@ -8,6 +8,8 @@
 
     <title>{% if page.title %} {{ page.title }} | {% endif %} {{site.title}}</title>
 
+    <link rel="canonical" href="{{page.url | prepend : site.url }}">
+
     <!-- Bootstrap core CSS -->
     <link href="{{ '/vendor/bootstrap/css/bootstrap.min.css' | prepend: site.baseurl }}" rel="stylesheet">
 
@@ -55,5 +57,9 @@
     <meta property="og:image:width" content="460">
     <meta property="og:image:height" content="460">
 
+
+    {% if jekyll.environment == 'production' %}
+      {% include analytics.html%}
+    {% endif%}
 
   </head>
