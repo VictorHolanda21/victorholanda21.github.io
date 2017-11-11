@@ -53,8 +53,13 @@ description: "Um simples blog pessoal de Victor Holanda"
               {% endif %}
             </a>
             <p class="post-meta">Por
-              <a href="#">{{post.author}}</a>
-              em {{ post.date | date: "%d %b %Y" }}</p>
+              <a href="{{site.baseurl}}/pesquisar/?query={{post.author | slugfy}}">{{post.author}}</a>
+              em {{ post.date | date: "%d %b %Y" }}
+              <i class="fa fa-folder-open" aria-hidden="true"></i>
+                  <a href="{{site.baseurl}}/pesquisar/?query={{post.category | slugfy}}">
+                    {{ post.category }}  
+                  </a>
+              </p>
           </div>
           <hr>
           <!-- end post -->

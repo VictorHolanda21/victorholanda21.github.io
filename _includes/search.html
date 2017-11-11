@@ -1,0 +1,12 @@
+ <div class="mb-5">
+  <form action="{{'/pesquisar/' | prepend: site.baseurl }}" method="get" class="form-inline">
+    <div class="form-group row">
+      <label for="search-box" class="sr-only">Pesquisar</label>
+      <input type="text" id="search-box" name="query" class="form-control form-control-lg" placeholder="Pesquisar">
+     <input type="submit" value="pesquisar" class="btn btn-primary">
+    </div>
+  </form>
+  <small class="form-text text-muted">
+    <a href="#resultados" id="count-results" class="js-scroll-trigger">Pesquise por posts, autor, categorias...</a>
+  </small>
+</div>   
