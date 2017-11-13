@@ -19,9 +19,11 @@ layout: default
                   <a href="{{site.baseurl}}/pesquisar/?q={{page.author | slugfy}}">{{page.author}}</a>
                   em {{ page.date | date: "%d %b %Y" }}
                   <i class="fa fa-folder-open" aria-hidden="true"></i>
-                  <a href="{{site.baseurl}}/pesquisar/?q={{page.category | slugfy}}">
-                    {{ page.category }}  
-                  </a>
+                  {% for category in page.categories %}
+                    <a href="{{site.baseurl}}/pesquisar/?q={{category | slugfy}}">
+                      {{category}}{% unless forloop.last %}, {% endunless %}
+                    </a>
+                  {% endfor %} 
             </span>
           </div>
         </section>
@@ -41,7 +43,7 @@ layout: default
           <div class="clearfix">
               <p>Tópicos:
                 {% for tag in page.tags %}
-                  <a href="#" class="badge badge-light">{{tag}}</a>
+                  <a href="{{site.baseurl}}/pesquisar/?q={{tag | slugfy}}" class="badge badge-light">{{tag}}</a>
                 {% endfor %}
               </p>
             </div>

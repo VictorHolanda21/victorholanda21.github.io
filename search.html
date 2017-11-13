@@ -51,7 +51,7 @@ permalink: "/pesquisar/"
       "{{ post.url | slugify }}": {
         "title": "{{ post.title | xml_escape }}",
         "author": "{{ post.author | xml_escape }}",
-        "category": "{{ post.category | xml_escape }}",
+        "categories": "{{ post.categories | xml_escape }}",
         "tags": "{{ post.tags | xml_escape }}",
         "content": {{ post.content | strip_html | strip_newlines | jsonify }},
         "url": "{{ post.url | xml_escape }}",

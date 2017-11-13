@@ -56,9 +56,11 @@ description: "Um simples blog pessoal de Victor Holanda"
               <a href="{{site.baseurl}}/pesquisar/?q={{post.author | slugfy}}">{{post.author}}</a>
               em {{ post.date | date: "%d %b %Y" }}
               <i class="fa fa-folder-open" aria-hidden="true"></i>
-                  <a href="{{site.baseurl}}/pesquisar/?q={{post.category | slugfy}}">
-                    {{ post.category }}  
-                  </a>
+                  {% for category in post.categories %}
+                    <a href="{{site.baseurl}}/pesquisar/?q={{category | slugfy}}">
+                      {{category}}{% unless forloop.last %}, {% endunless %}
+                    </a>
+                  {% endfor %} 
               </p>
           </div>
           <hr>

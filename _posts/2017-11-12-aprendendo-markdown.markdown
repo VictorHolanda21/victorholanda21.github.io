@@ -14,7 +14,7 @@ Markdown é uma linguagem simples de marcação que converte texto simples para 
 
 A documentação do projeto pode ser vista em [Daring Fireball][daring]{:target="_blank"} e a sintaxe pode ser testada usando o online [Dingus][dingus]{:target="_blank"}. O markdown é utilizado pelo [Github Pages][github pages]{:target="_blank"} para formatação dos textos.
 
-Algumas opções de sintaxes:
+Algumas opções de sintaxes que serão vistas nesse tutorial:
 
 
 1. [Cabeçalho](#1-cabeçalho){:class="js-scroll-trigger"}

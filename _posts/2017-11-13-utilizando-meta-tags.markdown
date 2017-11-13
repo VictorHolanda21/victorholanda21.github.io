@@ -4,13 +4,15 @@ title:  "Utilizando Meta tags"
 subtitle: "O que é e como usar?"
 author: Victor Holanda
 date:   2017-11-13 17:20:00 -0300
-category: Tecnologia
-tags: ["metatags", "tutorial"]
+categories: [Tecnologia, SEO]
+tags: ["meta tags", "tutorial", "SEO"]
 ---
 
 Meta tags são linhas de código HTML que descrevem o conteúdo do site para os buscadores (Google, Bing, etc.). As meta tags não irão ser visualizadas na página, mas os robôs de pesquisas poderão visualizar as informações contidas dentro dessas meta tags.
 
 As meta tags são tipicamentes usadas para especificar descrição da página, palavras-chaves, autor do documento, última modificação, e etc.. Elas podem ser utilizadas por navegadores para, por exemplo, informar ao navegador como apresentar as informações contidas naquela página, ou recarregar a página para obter informações atualizadas. Os mecanismos de buscas podem coletar as informações e facilitar, por exemplo, no posicionamento de sua página web nos resultados das buscas de internet.
+
+Portanto, as meta tags são uma das técnicas utilizadas em estratégias de [SEO][1] que significa Search Engine Optimization (Otimização para mecanismos de busca) que permite o melhor posicionamento dos sites/blogs nos buscadores.
 
 As meta tags `<meta>` são sempre inseridas dentro do elemento `<head>`. Além disso, meta tags sempre recebem um par de nome e valor.
 
@@ -29,9 +31,9 @@ As meta tags utilizadas neste blog, que serão dividas em 4 partes, são as segu
 
 {% endhighlight %}
 
-1. É referente ao tipo de codificação dos caracteres da página, o [`utf-8`][1]{:target="_blank"} é uma codificação padrão para email, páginas web e outros locais onde os caracteres são armazenados, essa codificação permite basicamente que caracteres com [diacríticos][2]{:target="_blank"}, ou seja, com sinais gráficos como acentos, sejam visualizados de forma correta.
+1. É referente ao tipo de codificação dos caracteres da página, o [`utf-8`][2]{:target="_blank"} é uma codificação padrão para email, páginas web e outros locais onde os caracteres são armazenados, essa codificação permite basicamente que caracteres com [diacríticos][3]{:target="_blank"}, ou seja, com sinais gráficos como acentos, sejam visualizados de forma correta.
 
-2. Trata do [viewport][3]{:target="_blank"}, ou a área onde o site aparece. É a área branca da janela quando é aberta o navegador. O viewport  sempre vai ter o tamanho da janela, mas as formas que serão renderizados vai depender bastante do dispositivo. Os valores de content pode ser os que seguem abaixo:
+2. Trata do [viewport][4]{:target="_blank"}, ou a área onde o site aparece. É a área branca da janela quando é aberta o navegador. O viewport  sempre vai ter o tamanho da janela, mas as formas que serão renderizados vai depender bastante do dispositivo. Os valores de content pode ser os que seguem abaixo:
 
 	a. **width**: Define uma largura para o viewport. Os valores podem ser em PX ou “device-width”, que determina automaticamente um valor igual a largura da tela do dispositivo.  
 
@@ -49,11 +51,11 @@ As meta tags utilizadas neste blog, que serão dividas em 4 partes, são as segu
 
 5. Palavras-chaves da página. Termos mais importantes que podem ser usadas para facilitar nos resultados dos buscadores.
 
-Você pode usar  outras tags específicas para o buscador do [Google][4]{:target="_blank"} que controlam o comportamento do rastreamento e indexação das páginas, tradução automática e etc..
+Você pode usar  outras tags específicas para o buscador do [Google][5]{:target="_blank"} que controlam o comportamento do rastreamento e indexação das páginas, tradução automática e etc..
 
 * Meta tags do Open Graph protocol
 
-O [protocolo Open Graph][5]{:target="_blank"} permite que qualquer página da web seja visualizado como um post normal do Facebook.
+O [protocolo Open Graph][6]{:target="_blank"} permite que qualquer página da web seja visualizado como um post normal do Facebook.
 
 {% highlight html %}
 
@@ -112,8 +114,9 @@ O [protocolo Open Graph][5]{:target="_blank"} permite que qualquer página da we
 
 Essas são só as meta tags utilizadas nesse post.
 
-[1]: https://pt.wikipedia.org/wiki/UTF-8 "Wikipedia: UTF-8"
-[2]: https://pt.wikipedia.org/wiki/Diacr%C3%ADtico "Wikipedia: diacrítico"
-[3]: https://tableless.com.br/manipulando-metatag-viewport/ "Tableless: Manipulando a metatag Viewport"
-[4]: https://support.google.com/webmasters/answer/79812?hl=pt-BR "Metatags que o Google entende"
-[5]: http://ogp.me/ "Open Graph protocol"
+[1]: https://marketingdeconteudo.com/o-que-e-seo/ "Marketing de conteudo: O que é SEO?"
+[2]: https://pt.wikipedia.org/wiki/UTF-8 "Wikipedia: UTF-8"
+[3]: https://pt.wikipedia.org/wiki/Diacr%C3%ADtico "Wikipedia: diacrítico"
+[4]: https://tableless.com.br/manipulando-metatag-viewport/ "Tableless: Manipulando a metatag Viewport"
+[5]: https://support.google.com/webmasters/answer/79812?hl=pt-BR "Metatags que o Google entende"
+[6]: http://ogp.me/ "Open Graph protocol"

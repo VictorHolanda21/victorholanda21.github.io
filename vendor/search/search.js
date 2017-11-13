@@ -10,8 +10,8 @@
       for (var i = 0; i < results.length; i++) {  // Iterate over the results
         var item = store[results[i].ref];
         appendString += '<a href="' + item.url + '"><h2 class="post-title">' + item.title + '</h2></a>';
-        appendString += '<p>' + item.content.substring(0, 150) + '...</p>';
-        appendString += '<p class="post-meta">Por <a href=/pesquisar/?q=' + item.author + '> '+ item.author + '</a> em '+ item.date +' <i class="fa fa-folder-open" aria-hidden="true"></i> <a href=/pesquisar/?q=' + item.category + '>' + item.category+ '</a></p>';
+        appendString += '<p>' + item.content.substring(0, 150) + ' ... </p>';
+        appendString += '<p class="post-meta">Por <a href=/pesquisar/?q=' + item.author + '> '+ item.author + '</a> em '+ item.date;
         appendString += '<hr>';
         if (results.length > 1){
           appendCountString = 'Aproximadamente <b>' + results.length + '</b> resultados.' ;
@@ -62,7 +62,8 @@
       this.field('id');
       this.field('title', { boost: 10 });
       this.field('author');
-      this.field('category');
+      this.field('categories');
+      this.field('tags');
       this.field('content');
       this.field('date');
     });
@@ -72,7 +73,8 @@
         'id': key,
         'title': window.store[key].title,
         'author': window.store[key].author,
-        'category': window.store[key].category,
+        'categories': window.store[key].categories,
+        'tags': window.store[key].tags,
         'content': window.store[key].content,
         'date': window.store[key].date,
       });
