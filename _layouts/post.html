@@ -16,10 +16,10 @@ layout: default
               </h3>
             {% endif %}
            <span class="meta">Por
-                  <a href="{{site.baseurl}}/pesquisar/?query={{page.author | slugfy}}">{{page.author}}</a>
+                  <a href="{{site.baseurl}}/pesquisar/?q={{page.author | slugfy}}">{{page.author}}</a>
                   em {{ page.date | date: "%d %b %Y" }}
                   <i class="fa fa-folder-open" aria-hidden="true"></i>
-                  <a href="{{site.baseurl}}/pesquisar/?query={{page.category | slugfy}}">
+                  <a href="{{site.baseurl}}/pesquisar/?q={{page.category | slugfy}}">
                     {{ page.category }}  
                   </a>
             </span>

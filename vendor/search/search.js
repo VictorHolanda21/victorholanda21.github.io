@@ -11,7 +11,7 @@
         var item = store[results[i].ref];
         appendString += '<a href="' + item.url + '"><h2 class="post-title">' + item.title + '</h2></a>';
         appendString += '<p>' + item.content.substring(0, 150) + '...</p>';
-        appendString += '<p class="post-meta">Por <a href=/pesquisar/?query=' + item.author + '> '+ item.author + '</a> em '+ item.date +' <i class="fa fa-folder-open" aria-hidden="true"></i> <a href=/pesquisar/?query=' + item.category + '>' + item.category+ '</a></p>';
+        appendString += '<p class="post-meta">Por <a href=/pesquisar/?q=' + item.author + '> '+ item.author + '</a> em '+ item.date +' <i class="fa fa-folder-open" aria-hidden="true"></i> <a href=/pesquisar/?q=' + item.category + '>' + item.category+ '</a></p>';
         appendString += '<hr>';
         if (results.length > 1){
           appendCountString = 'Aproximadamente <b>' + results.length + '</b> resultados.' ;
@@ -51,7 +51,7 @@
     }
   }
 
-  var searchTerm = getQueryVariable('query');
+  var searchTerm = getQueryVariable('q');
 
   if (searchTerm) {
     document.getElementById('search-box').setAttribute("value", searchTerm);
