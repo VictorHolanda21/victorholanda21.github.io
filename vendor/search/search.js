@@ -9,9 +9,9 @@
 
       for (var i = 0; i < results.length; i++) {  // Iterate over the results
         var item = store[results[i].ref];
-        appendString += '<a href="' + item.url + '"><h2 class="post-title">' + item.title + '</h2></a>';
+        appendString += '<a href="' + item.url + '" title="' + item.title + '"><h2 class="post-title">' + item.title + '</h2></a>';
         appendString += '<p>' + item.content.substring(0, 150) + ' ... </p>';
-        appendString += '<p class="post-meta">Por <a href=/pesquisar/?q=' + item.author + '> '+ item.author + '</a> em '+ item.date;
+        appendString += '<p class="post-meta">Por <a href=/pesquisar/?q=' + item.author + ' title="Pesquisar: ' + item.author + '"> '+ item.author + '</a> em '+ item.date;
         appendString += '<hr>';
         if (results.length > 1){
           appendCountString = 'Aproximadamente <b>' + results.length + '</b> resultados.' ;

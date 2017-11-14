@@ -8,28 +8,6 @@ description: "Um simples blog pessoal de Victor Holanda"
 <!-- Blog Section -->
 <!-- Main Content -->
     <div class="container">
-    <div class="row">
-       <section class="resume-section p-3 p-lg-5 d-flex d-column" id="blog">
-        <div class="my-auto">
-          <h1 class="mb-0">{{site.firstname}}
-            <span class="text-primary">{{site.lastname}}</span>
-          </h1>
-          <div class="subheading mb-5">{{site.my_location}} ·
-            <a href="mailto:{{site.email}}">{{site.email}}</a>
-          </div>
-
-          <h2 class="mb-5">Blog Pessoal</h2>
-          <p class="mb-5">Como um amante de tecnologia, gestão e projetos essa página é dedicada ao compartilhamento de alguns assuntos que estudo.</p>
-          
-          <ul class="list-inline list-social-icons mb-0">
-            {% include contact.html %}
-          </ul>
-          
-        </div>
-      </section>
-    </div>
-
-
 
       <div class="row" id="posts">
         <div class="col-lg-8 col-md-10 mx-auto">
@@ -42,7 +20,7 @@ description: "Um simples blog pessoal de Victor Holanda"
 
            <!-- post -->
           <div class="post-preview">
-            <a href="{{ post.url | prepend: site.baseurl }}">
+            <a href="{{ post.url | prepend: site.baseurl }}" title="{{post.title}}">
               <h2 class="post-title">
                {{ post.title }}
               </h2>
@@ -53,11 +31,11 @@ description: "Um simples blog pessoal de Victor Holanda"
               {% endif %}
             </a>
             <p class="post-meta">Por
-              <a href="{{site.baseurl}}/pesquisar/?q={{post.author | slugfy}}">{{post.author}}</a>
+              <a href="{{site.baseurl}}/pesquisar/?q={{post.author | slugfy}}" title="Pesquisar: {{post.author}}">{{post.author}}</a>
               em {{ post.date | date: "%d %b %Y" }}
               <i class="fa fa-folder-open" aria-hidden="true"></i>
                   {% for category in post.categories %}
-                    <a href="{{site.baseurl}}/pesquisar/?q={{category | slugfy}}">
+                    <a href="{{site.baseurl}}/pesquisar/?q={{category | slugfy}}" title="Pesquisar: {{category}}">
                       {{category}}{% unless forloop.last %}, {% endunless %}
                     </a>
                   {% endfor %} 
@@ -71,14 +49,14 @@ description: "Um simples blog pessoal de Victor Holanda"
         {% else %}
           <!-- post -->
           <div class="post-preview">
-            <a href="post.html">
+            <a href="post.html" title="Desculpe, não há posts disponíveis. :(">
               <h2 class="post-title">
                 Desculpe, não há posts disponíveis. :(
               </h2>
 
             </a>
             <p class="post-meta">Por
-              <a href="#">{{site.copyright_name}}</a>
+              <a href="{{site.baseurl}}/pesquisar/?q={{site.copyright_name | slugfy}}" title="Pesquisar: {{site.copyright_name}}">{{site.copyright_name}}</a>
               em {{ post.date | date: "%d %b %Y" }}</p>
           </div>
           <hr>
@@ -95,14 +73,14 @@ description: "Um simples blog pessoal de Victor Holanda"
           </div>
 
           {% if paginator.previous_page %}
-            <a  class="btn btn-primary" href="{{ paginator.previous_page_path | prepend: site.baseurl }}">
-              &larr; Posts recentes
+            <a  class="btn btn-primary" href="{{ paginator.previous_page_path | prepend: site.baseurl }}" title="Posts Recentes">
+              &larr; Posts Recentes
             </a>
           {% endif %}
 
 
           {% if paginator.next_page %}
-            <a class="btn btn-primary float-right" href="{{ paginator.next_page_path | prepend: site.baseurl }}">
+            <a class="btn btn-primary float-right" href="{{ paginator.next_page_path | prepend: site.baseurl }}" title="Posts Antigos">
              Posts Antigos &rarr;
             </a>
           {% endif %}

@@ -16,11 +16,11 @@ layout: default
               </h3>
             {% endif %}
            <span class="meta">Por
-                  <a href="{{site.baseurl}}/pesquisar/?q={{page.author | slugfy}}">{{page.author}}</a>
+                  <a href="{{site.baseurl}}/pesquisar/?q={{page.author | slugfy}}" title="Pesquisar: {{page.author}}">{{page.author}}</a>
                   em {{ page.date | date: "%d %b %Y" }}
                   <i class="fa fa-folder-open" aria-hidden="true"></i>
                   {% for category in page.categories %}
-                    <a href="{{site.baseurl}}/pesquisar/?q={{category | slugfy}}">
+                    <a href="{{site.baseurl}}/pesquisar/?q={{category | slugfy}}" title="Pesquisar: {{category}}">
                       {{category}}{% unless forloop.last %}, {% endunless %}
                     </a>
                   {% endfor %} 
@@ -43,7 +43,7 @@ layout: default
           <div class="clearfix">
               <p>Tópicos:
                 {% for tag in page.tags %}
-                  <a href="{{site.baseurl}}/pesquisar/?q={{tag | slugfy}}" class="badge badge-light">{{tag}}</a>
+                  <a href="{{site.baseurl}}/pesquisar/?q={{tag | slugfy}}" class="badge badge-light" title="Pesquisar: {{tag}}">{{tag}}</a>
                 {% endfor %}
               </p>
             </div>

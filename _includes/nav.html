@@ -1,8 +1,8 @@
     <nav class="navbar navbar-expand-lg navbar-dark bg-primary fixed-top" id="sideNav">
-      <a class="navbar-brand js-scroll-trigger" href="{{'/#page-top' | prepend: site.baseurl }}">
+      <a class="navbar-brand js-scroll-trigger" href="{{'/#page-top' | prepend: site.baseurl }}" title="{{site.title}}">
         <span class="d-block d-lg-none">{{site.title}}</span>
         <span class="d-none d-lg-block">
-          <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="{{ site.avatar }}" alt="">
+          <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="{{ site.avatar }}" alt="{{site.copyright_name}}">
         </span>
       </a>
       <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -11,25 +11,32 @@
       <div class="collapse navbar-collapse" id="navbarSupportedContent">
         <ul class="navbar-nav">
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="{{ '/#about' | prepend: site.baseurl }}">Sobre</a>
+            <a class="nav-link js-scroll-trigger" href="{{ '/#about' | prepend: site.baseurl }}" title="Sobre">
+              Sobre</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="{{ '/#experience' | prepend: site.baseurl }}">Experiência</a>
+            <a class="nav-link js-scroll-trigger" href="{{ '/#experience' | prepend: site.baseurl }}" title="Experiência">
+              Experiência</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="{{ '/#education' | prepend: site.baseurl }}">Educação</a>
+            <a class="nav-link js-scroll-trigger" href="{{ '/#education' | prepend: site.baseurl }}" title="Educação">
+              Educação</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="{{ '/#skills' | prepend: site.baseurl }}">Habilidades</a>
+            <a class="nav-link js-scroll-trigger" href="{{ '/#skills' | prepend: site.baseurl }}" title="Habilidades">
+              Habilidades</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="{{ '/#interests' | prepend: site.baseurl }}">Interesse</a>
+            <a class="nav-link js-scroll-trigger" href="{{ '/#interests' | prepend: site.baseurl }}" title="Interesse">
+              Interesse</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="{{ '/#certifications' | prepend: site.baseurl }}">Certificações</a>
+            <a class="nav-link js-scroll-trigger" href="{{ '/#certifications' | prepend: site.baseurl }}" title="Certificações">
+              Certificações</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="{{ '/blog/' | prepend: site.baseurl }}">Blog</a>
+            <a class="nav-link js-scroll-trigger" href="{{ '/blog/' | prepend: site.baseurl }}" title="Blog">
+              Blog</a>
           </li>
         </ul>
       </div>
