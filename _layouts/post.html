@@ -51,22 +51,23 @@ layout: default
           </div>
 
 
-    {% if jekyll.environment == 'production' %}
-        {% if page.comments %}
-
-        <div class="clearfix">
-          <div class="comments">
-              {% include disqus.html %}
-          </div>
-          <hr>
-        </div>
-
-        {% endif %}
-    {% endif %}
-
         </div>
     </article>
 
+    {% if page.comments %}
+      <div class="row">
+        <div class="col-lg-8 col-md-10 mx-auto">
+          <div class="clearfix">
+            <div class="comments">
+                {% include disqus.html %}
+            </div>
+            <hr>
+          </div>
+          
+        </div>
+      </div>
+
+    {% endif %}
 <!-- End Blog Section -->
 
     <div class="clearfix">
