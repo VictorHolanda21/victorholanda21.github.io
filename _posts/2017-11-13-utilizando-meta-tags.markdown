@@ -19,8 +19,16 @@ As meta tags `<meta>` são sempre inseridas dentro do elemento `<head>`. Além d
 
 As meta tags utilizadas neste blog, que serão dividas em 4 partes, são as seguintes:
 
+---------------------------------
 
-* Meta tags básicas:
+1. [Meta tags básicas](#1-meta-tags-básicas "Meta tags básicas"){:class="js-scroll-trigger"}
+2. [Meta tags do Open Graph protocol](#2-meta-tags-do-open-graph-protocol "Meta tags do Open Graph protocol"){:class="js-scroll-trigger"}
+3. [Meta tags voltadas para artigos](#3-meta-tags-voltadas-para-artigos "Meta tags voltadas para artigos"){:class="js-scroll-trigger"}
+4. [Meta tags para imagens](#4-meta-tags-para-imagens "Meta tags para imagens"){:class="js-scroll-trigger"}
+
+---------------------------------
+
+##### 1. Meta tags básicas
 
 {% highlight html %}
 
@@ -54,7 +62,9 @@ As meta tags utilizadas neste blog, que serão dividas em 4 partes, são as segu
 
 Você pode usar  outras tags específicas para o buscador do [Google][5]{:target="_blank"} que controlam o comportamento do rastreamento e indexação das páginas, tradução automática e etc..
 
-* Meta tags do Open Graph protocol
+---------------------------------
+
+##### 2. Meta tags do Open Graph protocol
 
 O [protocolo Open Graph][6]{:target="_blank"} permite que qualquer página da web seja visualizado como um post normal do Facebook.
 
@@ -77,7 +87,9 @@ O [protocolo Open Graph][6]{:target="_blank"} permite que qualquer página da we
 3. Título da página.
 4. Endereço da página.
 
-* Meta tags voltadas para artigos:
+---------------------------------
+
+##### 3. Meta tags voltadas para artigos
 
 {% highlight html %}
 
@@ -97,7 +109,9 @@ O [protocolo Open Graph][6]{:target="_blank"} permite que qualquer página da we
 5. Data da publicação.
 6. Descrição do artigo.
 
-* Meta tags para imagens:
+---------------------------------
+
+##### 4. Meta tags para imagens
 
 {% highlight html %}
 

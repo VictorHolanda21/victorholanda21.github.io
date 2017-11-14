@@ -6,21 +6,21 @@ subtitle: "Usando Disqus para moderar comentários no seu blog"
 author: Victor Holanda
 date:   2017-11-14 16:00:00 -0300
 categories: [Tecnologia]
-tags: ["disqus", "tutorial", "moderacao", "comentarios"]
+tags: ["disqus", "tutorial", "moderar", "comentários"]
 ---
 
 O [Disqus][oficial_disqus]{:target="_blank"} é um serviço online que oferece uma [plataforma][wiki_disqus]{:target="_blank"} de discussões e postagem de comentários para sites. O Disqus ajuda a escritores aumentarem o engajamento e construir uma audiência fiel.
 
 Para inserir o Disqus em seu site você deve primeiramente se cadastrar no site. Após isso, em poucos minutos você já pode instalar no seu site o Disqus utilizando as opções que o próprio site fornece.
 
-Para instalar no Jekyll eu segui os seguintes passos:
+Para instalar no Jekyll eu segui os seguintes passos desse breve tutorial:
 
 ---------------------------------
 
-1. [Criar um arquivo `disqus.html`](#1-criar-um-arquivo-disqushtml){:class="js-scroll-trigger"}
-2. [Editar o arquivo `post.html`](#2-editar-o-arquivo-posthtml){:class="js-scroll-trigger"}
-3. [Permitir comentários no post](#3-permitir-comentários-no-post){:class="js-scroll-trigger"}
-4. [Moderar os comentários](#4-moderar-os-comentários){:class="js-scroll-trigger"}
+1. [Criar um arquivo `disqus.html`](#1-criar-um-arquivo-disqushtml "Criar um arquivo `disqus.html`"){:class="js-scroll-trigger"}
+2. [Editar o arquivo `post.html`](#2-editar-o-arquivo-posthtml "Editar o arquivo `post.html`"){:class="js-scroll-trigger"}
+3. [Permitir comentários no post](#3-permitir-comentários-no-post "Permitir comentários no post"){:class="js-scroll-trigger"}
+4. [Moderar os comentários](#4-moderar-os-comentários "Moderar os comentários"){:class="js-scroll-trigger"}
 
 
 -------------------------------
@@ -57,7 +57,7 @@ No diretório `_includes` eu criei um arquivo com o seguinte conteúdo:
 
 {% endhighlight %}
 
-Para facilitar eu atribui para as variavéis `disqus_shortname` no arquivo `_config.yml`.  
+Para facilitar eu atribui para as variáveis `disqus_shortname` no arquivo `_config.yml`.  
 Em `page.url` você vai adicionar a url da página que terá a seção de comentários.
 
 -------------------------------

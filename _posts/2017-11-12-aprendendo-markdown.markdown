@@ -17,21 +17,23 @@ A documentação do projeto pode ser vista em [Daring Fireball][daring]{:target=
 
 Algumas opções de sintaxes que serão vistas nesse tutorial:
 
+---------------------------------
 
-1. [Cabeçalho](#1-cabeçalho){:class="js-scroll-trigger"}
-2. [Listas](#2-listas){:class="js-scroll-trigger"}
-3. [Citações](#3-citações){:class="js-scroll-trigger"}
-4. [Bloco de códigos](#4-bloco-de-códigos){:class="js-scroll-trigger"}
-5. [Linhas horizontais](#5-linhas-horizontais){:class="js-scroll-trigger"}
-6. [Links](#6-links){:class="js-scroll-trigger"}
-7. [Imagens](#7-imagens){:class="js-scroll-trigger"}
-8. [Tabelas](#8-tabelas){:class="js-scroll-trigger"}
-9. [Enfâse](#9-enfâse){:class="js-scroll-trigger"}
-10. [Notas de rodapé](#10-notas-de-rodapé){:class="js-scroll-trigger"}
-11. [Abreviações](#11-abreviações){:class="js-scroll-trigger"}
-12. [Caractere de Escapes](#12-caractere-de-escapes){:class="js-scroll-trigger"}
+1. [Cabeçalho](#1-cabeçalho "Cabeçalho"){:class="js-scroll-trigger"}
+2. [Listas](#2-listas "Listas"){:class="js-scroll-trigger"}
+3. [Citações](#3-citações "Citações"){:class="js-scroll-trigger"}
+4. [Bloco de códigos](#4-bloco-de-códigos "Bloco de códigos"){:class="js-scroll-trigger"}
+5. [Linhas horizontais](#5-linhas-horizontais "Linhas horizontais"){:class="js-scroll-trigger"}
+6. [Links](#6-links "Links"){:class="js-scroll-trigger"}
+7. [Imagens](#7-imagens "Imagens"){:class="js-scroll-trigger"}
+8. [Tabelas](#8-tabelas "Tabelas"){:class="js-scroll-trigger"}
+9. [Enfâse](#9-enfâse "Enfâse"){:class="js-scroll-trigger"}
+10. [Notas de rodapé](#10-notas-de-rodapé "Notas de rodapé"){:class="js-scroll-trigger"}
+11. [Abreviações](#11-abreviações "Abreviações"){:class="js-scroll-trigger"}
+12. [Caractere de Escapes](#12-caractere-de-escapes "Caractere de Escapes"){:class="js-scroll-trigger"}
 
---------------------------------------------------------------------------------------
+---------------------------------
+
 ##### 1. Cabeçalho
 
 Markdown suporta dois estilos de cabeçalhos:
@@ -72,7 +74,7 @@ O resultado será:
 ##### h5
 ###### h6
 
---------------------------------------------------------------------------------------
+---------------------------------
 
 ##### 2. Listas
 
@@ -161,7 +163,7 @@ O resultado será:
 
 2017\. Ano que criei esse site "victorholanda21.github.io".
 
---------------------------------------------------------------------------------------
+---------------------------------
 
 ##### 3. Citações
 
@@ -225,7 +227,7 @@ O resultado será:
 > 
 >     return shell_exec("echo $input | $markdown_script");
 
---------------------------------------------------------------------------------------
+---------------------------------
 
 ##### 4. Bloco de códigos
 
@@ -249,7 +251,7 @@ puts "Olá"
 
 **Obs.:** retire o espaço entre `{`, `}` e `%` 
 
---------------------------------------------------------------------------------------
+---------------------------------
 
 ##### 5. Linhas horizontais
 
@@ -265,7 +267,7 @@ Você pode criar linhas horizontais de três maneiras ou mais, usando hífen, as
 
 {% endhighlight %}
 
---------------------------------------------------------------------------------------
+---------------------------------
 
 ##### 6. Links
 
@@ -314,7 +316,7 @@ Este é [um exemplo](http://example.com/ "Titulo"){:id="algum-id"}{:class="prime
 
 {% endhighlight %}
 
---------------------------------------------------------------------------------------
+---------------------------------
 
 ##### 7. Imagens
 
@@ -331,7 +333,7 @@ Para inserir imagens você pode usar os mesmo estilos e uma sintaxe parecida com
 
 **Obs.:** O nome da imagem é o nome que irá aparecer ao colocar o mouse em cima da imagem ou quando a imagem não for visualizada, por alguma falha de download, por exemplo.
 
---------------------------------------------------------------------------------------
+---------------------------------
 
 ##### 8. Tabelas
 
@@ -386,7 +388,7 @@ O resultado:
 | 3 	| Mousepad    	|    R$1,00 |
 
 
---------------------------------------------------------------------------------------
+---------------------------------
 
 
 ##### 9. Enfâse
@@ -411,7 +413,7 @@ _um underscore_
 **dois asteriscos**  
 __dois underscores__
 
---------------------------------------------------------------------------------------
+---------------------------------
 
 ##### 10. Notas de rodapé
 
@@ -426,7 +428,7 @@ Algum texto com rodapé.[^1]
 
 {% endhighlight %}
 
---------------------------------------------------------------------------------------
+---------------------------------
 
 ##### 11. Abreviações
 
@@ -446,7 +448,7 @@ O HTML é uma linguagem de marcação de texto usada na web
 
 {% endhighlight %}
 
---------------------------------------------------------------------------------------
+---------------------------------
 
 ##### 12. Caractere de Escapes
 

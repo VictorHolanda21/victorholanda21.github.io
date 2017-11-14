@@ -6,7 +6,7 @@ subtitle: "Como criei meu site/blog"
 author: Victor Holanda
 date:   2017-11-10 09:00:00 -0300
 category: Tecnologia
-tags: ["github", "github pages", "jekyll"]
+tags: ["github", "github pages", "jekyll", "hospedagem"]
 ---
 
 
