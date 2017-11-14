@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"  xmlns:xhtml="http://www.w3.org/1999/xhtml">
+<url>
+  <loc>https://victorholanda21.github.io/</loc>
+  <xhtml:link rel="alternate" hreflang="pt" href="https://victorholanda21.github.io/" />
+  <lastmod>2017-11-14T13:53:03+00:00</lastmod>
+</url>
+<url>
+  <loc>https://victorholanda21.github.io/index.html</loc>
+  <xhtml:link rel="alternate" hreflang="pt" href="https://victorholanda21.githubio/index.html" />
+  <lastmod>2017-11-14T13:53:03+00:00</lastmod>
+</url>
+<url>
+  <loc>https://victorholanda21.github.io/blog/</loc>
+  <xhtml:link rel="alternate" hreflang="pt" href="https://victorholanda21.github.io/blog/" />
+  <lastmod>2017-11-14T13:53:03+00:00</lastmod>
+</url>
+<url>
+  <loc>https://victorholanda21.github.io/blog/index.html</loc>
+  <xhtml:link rel="alternate" hreflang="pt" href="https://victorholanda21.github.io/blog/index.html" />
+  <lastmod>2017-11-14T17:00:03+00:00</lastmod>
+</url>
+<url>
+  <loc>https://victorholanda21.github.io/pesquisar/</loc>
+  <xhtml:link rel="alternate" hreflang="pt" href="https://victorholanda21.github.io/pesquisar/" />
+  <lastmod>2017-11-14T17:00:03+00:00</lastmod>
+</url>
+<url>
+  <loc>https://victorholanda21.github.io/pesquisar/</loc>
+  <xhtml:link rel="alternate" hreflang="pt" href="https://victorholanda21.github.io/pesquisar/index.html" />
+  <lastmod>2017-11-14T17:00:03+00:00</lastmod>
+</url>
+<url>
+  <loc>https://victorholanda21.github.io/tecnologia/2017/11/10/ola-github-pages.html</loc>
+  <xhtml:link rel="alternate" hreflang="pt" href="https://victorholanda21.github.io/tecnologia/2017/11/10/ola-github-pages.html" />
+  <lastmod>2017-11-14T17:00:03+00:00</lastmod>
+</url>
+<url>
+  <loc>https://victorholanda21.github.io/tecnologia/2017/11/12/aprendendo-markdown.html</loc>
+  <xhtml:link rel="alternate" hreflang="pt" href="https://victorholanda21.github.io/tecnologia/2017/11/12/aprendendo-markdown.html" />
+  <lastmod>2017-11-14T17:00:03+00:00</lastmod>
+</url>
+<url>
+  <loc>https://victorholanda21.github.io/tecnologia/seo/2017/11/13/utilizando-meta-tags.html</loc>
+  <xhtml:link rel="alternate" hreflang="pt" href="https://victorholanda21.github.io/tecnologia/seo/2017/11/13/utilizando-meta-tags.html" />
+  <lastmod>2017-11-14T17:00:03+00:00</lastmod>
+</url>
+<url>
+  <loc>https://victorholanda21.github.io/tecnologia/2017/11/14/suite-de-aplicativos-do-google.html</loc>
+  <xhtml:link rel="alternate" hreflang="pt" href="https://victorholanda21.github.io/tecnologia/2017/11/14/suite-de-aplicativos-do-google.html" />
+  <lastmod>2017-11-14T17:00:03+00:00</lastmod>
+</url>
+<url>
+  <loc>https://victorholanda21.github.io/tecnologia/2017/11/14/adicionando-disqus-ao-jekyll.html</loc>
+  <xhtml:link rel="alternate" hreflang="pt" href="https://victorholanda21.github.io/tecnologia/2017/11/14/adicionando-disqus-ao-jekyll.html" />
+  <lastmod>2017-11-14T17:00:03+00:00</lastmod>
+</url>
+</urlset>
