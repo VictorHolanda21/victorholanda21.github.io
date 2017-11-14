@@ -12,7 +12,7 @@ Meta tags são linhas de código HTML que descrevem o conteúdo do site para os 
 
 As meta tags são tipicamentes usadas para especificar descrição da página, palavras-chaves, autor do documento, última modificação, e etc.. Elas podem ser utilizadas por navegadores para, por exemplo, informar ao navegador como apresentar as informações contidas naquela página, ou recarregar a página para obter informações atualizadas. Os mecanismos de buscas podem coletar as informações e facilitar, por exemplo, no posicionamento de sua página web nos resultados das buscas de internet.
 
-Portanto, as meta tags são uma das técnicas utilizadas em estratégias de [SEO][1] que significa Search Engine Optimization (Otimização para mecanismos de busca) que permite o melhor posicionamento dos sites/blogs nos buscadores.
+Portanto, as meta tags são uma das técnicas utilizadas em estratégias de [SEO][1]{:target="_blank"} que significa Search Engine Optimization (Otimização para mecanismos de busca) que permite o melhor posicionamento dos sites/blogs nos buscadores.
 
 As meta tags `<meta>` são sempre inseridas dentro do elemento `<head>`. Além disso, meta tags sempre recebem um par de nome e valor.
 
