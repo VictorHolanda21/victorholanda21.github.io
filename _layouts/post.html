@@ -50,6 +50,8 @@ layout: default
 
           </div>
 
+
+    {% if jekyll.environment == 'production' %}
         {% if page.comments %}
 
         <div class="clearfix">
@@ -60,6 +62,7 @@ layout: default
         </div>
 
         {% endif %}
+    {% endif %}
 
         </div>
     </article>
