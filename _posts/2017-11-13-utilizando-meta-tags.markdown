@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title:  "Utilizando Meta tags"
 subtitle: "O que é e como usar?"
 author: Victor Holanda

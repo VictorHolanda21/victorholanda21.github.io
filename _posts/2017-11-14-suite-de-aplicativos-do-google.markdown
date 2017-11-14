@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title:  "Suíte de aplicativos do Google"
 subtitle: "Ferramentas de produtividades do Google"
 author: Victor Holanda

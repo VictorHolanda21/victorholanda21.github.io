@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title:  "Aprendendo Markdown"
 subtitle: "O que é e como usar?"
 author: Victor Holanda

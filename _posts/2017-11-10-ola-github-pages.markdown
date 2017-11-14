@@ -1,5 +1,6 @@
 ---
 layout: post
+comments: true
 title:  "Olá, Github pages"
 subtitle: "Como criei meu site/blog"
 author: Victor Holanda
