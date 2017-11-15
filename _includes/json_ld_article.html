@@ -3,14 +3,25 @@
 <script type="application/ld+json">
 {
   "@context" : "http://schema.org",
-  "@type" : "Article",
+  "@type" : "NewsArticle",
+  "mainEntityOfPage": {
+    "@type": "WebPage",
+    "@id": "{{page.url | prepend : site.url }}"
+  },
   "headline" : "{{page.title}}",
   "alternativeHeadline": "{{page.subtitle}}",
   "author" : {
     "@type" : "Person",
     "name" : "{{page.author}}"
   },
-  "publisher": "{{site.copyright_name}}",
+   "publisher": {
+    "@type": "Organization",
+    "name": "{{site.copyright_name}}",
+    "logo": {
+      "@type": "ImageObject",
+      "url": "{{site.avatar}}"
+    }
+  },
   "image" : "{{site.avatar}}",
   "wordcount": "{{page.content | number_of_words }}",
   "datePublished" : "{{ page.date | date: '%Y-%m-%d' }}",
