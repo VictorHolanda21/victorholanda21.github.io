@@ -5,6 +5,7 @@ title:  "Adicionando Disqus ao Jekyll"
 subtitle: "Usando Disqus para moderar comentários no seu blog"
 author: Victor Holanda
 date:   2017-11-14 16:00:00 -0300
+last_modified_at: 2017-11-14 20:00:00 -0300
 categories: [Tecnologia]
 tags: ["disqus", "tutorial", "moderar", "comentários"]
 ---
@@ -22,12 +23,6 @@ Para instalar no Jekyll eu segui os seguintes passos desse breve tutorial:
 3. [Permitir comentários no post](#3-permitir-comentários-no-post "Permitir comentários no post"){:class="js-scroll-trigger"}
 4. [Moderar os comentários](#4-moderar-os-comentários "Moderar os comentários"){:class="js-scroll-trigger"}
 
-
--------------------------------
-
-
-**Obs.**: como não conseguia fazer com que o Jekyll não interpretasse os códigos eu adicionei `\`, basta retirar do código. Prefiro inserir textos à imagem no post.
-
 -------------------------------
 
 ##### 1. Criar um arquivo `disqus.html`
@@ -38,17 +33,19 @@ No diretório `_includes` eu criei um arquivo com o seguinte conteúdo:
 
 <div id="disqus_thread"></div>
 <script type="text/javascript">
-	
-	// required: replace example with your forum shortname
-	var disqus_shortname = '{\{ site.disqus_shortname }\}';
-	var disqus_identifier = '{\{ page.url }\}';
-	
-	/* * * DON'T EDIT BELOW THIS LINE * * */
-	(function() {
-	var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
-	dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
-	(document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
-	})();
+  
+  // required: replace example with your forum shortname
+{% raw %}
+  var disqus_shortname = '{{ site.disqus_shortname }}';
+  var disqus_identifier = '{{ page.url }}';
+{% endraw %}
+  
+  /* * * DON'T EDIT BELOW THIS LINE * * */
+  (function() {
+  var dsq = document.createElement('script'); dsq.type = 'text/javascript'; dsq.async = true;
+  dsq.src = '//' + disqus_shortname + '.disqus.com/embed.js';
+  (document.getElementsByTagName('head')[0] || document.getElementsByTagName('body')[0]).appendChild(dsq);
+  })();
 
 </script>
 <noscript>Please enable JavaScript to view the <a href="http://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
@@ -66,24 +63,34 @@ Em `page.url` você vai adicionar a url da página que terá a seção de coment
 
 No diretório `_layouts` eu editei o arquivo `post.html` e inseri no final do post o seguinte código:
 
-{% highlight html %}
+{% highlight ruby %}
 
-     {\% page.comments %\}
+  {% raw %}
+     {% page.comments %}
+  {% endraw %}
 
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
           <div class="clearfix">
             <div class="comments">
 
-            {\% jekyll.environment == 'production' %\}
+          {% raw %}
+            {% jekyll.environment == 'production' %}
+          {% endraw %}
 
-                {\{ include disqus.html }\}
+          {% raw %}
+                {{ include disqus.html }}
+          {% endraw %}
 
-             {\% else %\}
+          {% raw %}
+             {% else %}
+          {% endraw %}
 
-            	<h4>Disqus comentários aqui!</h4>
+              <h4>Disqus comentários aqui!</h4>
 
-             {\% endif %\}
+          {% raw %}
+             {% endif %}
+          {% endraw %}
             </div>
             <hr>
           </div>
@@ -91,7 +98,9 @@ No diretório `_layouts` eu editei o arquivo `post.html` e inseri no final do po
         </div>
       </div>
 
-  {\% endif %\}
+{% raw %}
+  {% endif %}
+{% endraw %}
 
 {% endhighlight %}
 

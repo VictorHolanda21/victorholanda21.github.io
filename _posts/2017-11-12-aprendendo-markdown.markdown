@@ -5,6 +5,7 @@ title:  "Aprendendo Markdown"
 subtitle: "O que é e como usar?"
 author: Victor Holanda
 date:   2017-11-12 22:00:00 -0300
+last_modified_at: 2017-11-14 20:00:00 -0300
 category: Tecnologia
 tags: markdown tutorial
 ---
@@ -243,13 +244,17 @@ Este é um parágrafo normal:
 
 No Jekyll você também pode usar:
 
-{ % highlight ruby % } 
+{% highlight ruby %}
+	
+	{% raw %}
+	{% highlight ruby %} 
 
-puts "Olá"
+		puts "Olá"
+		
+	{% endhighlight %}
+	{% endraw %}
 
-{ % endhighlight % }
-
-**Obs.:** retire o espaço entre `{`, `}` e `%` 
+{% endhighlight %}
 
 ---------------------------------
 

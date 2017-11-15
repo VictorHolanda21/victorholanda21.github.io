@@ -5,6 +5,7 @@ title:  "Utilizando Meta tags"
 subtitle: "O que é e como usar?"
 author: Victor Holanda
 date:   2017-11-13 17:20:00 -0300
+last_modified_at: 2017-11-14 20:00:00 -0300
 categories: [Tecnologia, SEO]
 tags: ["meta tags", "tutorial", "SEO"]
 ---
@@ -98,7 +99,8 @@ O [protocolo Open Graph][6]{:target="_blank"} permite que qualquer página da we
 3.     <meta property="article:section" content="Tecnologia">
 4.     <meta property="article:tag" content="meta tags, tutorial">
 5.     <meta property="article:published_time" content="2017-11-12">
-6.     <meta property="og:description" content="O que é e como usar?">
+5.     <meta property="article:modified_time" content="2017-11-12">
+7.     <meta property="og:description" content="O que é e como usar?">
 
  {% endhighlight %}
  
@@ -107,7 +109,8 @@ O [protocolo Open Graph][6]{:target="_blank"} permite que qualquer página da we
 3. Qual a categoria do artigo.
 4. Tópicos referente ao artigo.
 5. Data da publicação.
-6. Descrição do artigo.
+6. Data da modificação.
+7. Descrição do artigo.
 
 ---------------------------------
 

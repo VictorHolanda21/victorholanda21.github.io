@@ -5,6 +5,7 @@ title:  "Suíte de aplicativos do Google"
 subtitle: "Ferramentas de produtividades do Google"
 author: Victor Holanda
 date:   2017-11-14 00:20:00 -0300
+last_modified_at: 2017-11-14 20:00:00 -0300
 categories: [Tecnologia, Produtividade]
 tags: ["aplicativos", "tutorial", "Google", "cloud", "search", "documentos", "planilhas", "agenda", "drive", "formularios", "keep"]
 ---
