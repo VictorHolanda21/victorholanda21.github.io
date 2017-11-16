@@ -68,20 +68,20 @@ description: "Um simples blog pessoal de Victor Holanda"
 
           <div class=clearfix>
             
-          <div class="resume-date text-md-center">
+          <div class="blog-pages text-md-center">
             <span class="text-primary">Página {{ paginator.page }} de {{paginator.total_pages}}</span>
           </div>
 
           {% if paginator.previous_page %}
-            <a  class="btn btn-primary" href="{{ paginator.previous_page_path | prepend: site.baseurl }}" title="Posts Recentes">
-              &larr; Posts Recentes
+            <a  class="btn btn-primary" href="{{ paginator.previous_page_path | prepend: site.baseurl }}" title="Recentes">
+              &larr; Recentes
             </a>
           {% endif %}
 
 
           {% if paginator.next_page %}
-            <a class="btn btn-primary float-right" href="{{ paginator.next_page_path | prepend: site.baseurl }}" title="Posts Antigos">
-             Posts Antigos &rarr;
+            <a class="btn btn-primary float-right" href="{{ paginator.next_page_path | prepend: site.baseurl }}" title="Antigos">
+             Antigos &rarr;
             </a>
           {% endif %}
 

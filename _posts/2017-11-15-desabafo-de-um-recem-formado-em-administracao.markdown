@@ -72,7 +72,7 @@ Porém, sigo sonhando grande, propondo novos desafios e tentando superar meu mai
 [liga]: https://pt.wikipedia.org/wiki/Liga_acad%C3%AAmica "Wikipedia: Liga acadêmica"
 [aiese]: http://aiesec.org.br/ "Oficial: Aisec"
 [rotaract]: https://www.rotary.org/pt/get-involved/rotaract-clubs "Oficial: Rotaract"
-[estudar]: https://www.napratica.org.br/cursos/ "Ná Prática Cursos"
+[estudar]: https://www.napratica.org.br/cursos/ "Na Prática Cursos"
 
 
 

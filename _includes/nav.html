@@ -35,7 +35,7 @@
               Certificações</a>
           </li>
           <li class="nav-item">
-            <a class="nav-link js-scroll-trigger" href="{{ '/blog/' | prepend: site.baseurl }}" title="Blog">
+            <a class="nav-link js-scroll-trigger" href="{% if page.url == '/' %}{{ '/#blog' | prepend: site.baseurl }}{% else %}{{ '/blog/' | prepend: site.baseurl }}{% endif %}" title="Blog">
               Blog</a>
           </li>
         </ul>

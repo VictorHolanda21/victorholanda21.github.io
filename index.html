@@ -1,6 +1,6 @@
 ---
 layout: default
-title: "Inicio"
+title: "Currículo"
 description: "Curriculo de Victor Holanda"
 ---
 
@@ -9,18 +9,20 @@ description: "Curriculo de Victor Holanda"
       <section class="resume-section p-3 p-lg-5 d-flex d-column" id="about">
         <div class="my-auto">
 
-          <h1 class="mb-0">{{site.firstname}}
+          <div class="resume-author-avatar-wrapper">
+            <img class="img-fluid img-profile rounded-circle mx-auto mb-2" src="{{ site.avatar }}" alt="{{site.copyright_name}}">
+          </div>
+          <h1 class="resume-name mb-0">{{site.firstname}}
             <span class="text-primary">{{site.lastname}}</span>
           </h1>
-          <div class="subheading mb-5">{{site.my_location}} ·
+          <div class="resume-subheading subheading mb-5">{{site.my_location}} ·
             <a href="mailto:{{site.email}}" title="{{site.email}}">{{site.email}}</a>
           </div>
-          <p class="mb-5">{{site.description}}</p>
+          <p class="resume-description mb-5">{{site.description}}</p>
          
-          <ul class="list-inline list-social-icons mb-0">
+          <ul class="resume-social list-inline list-social-icons mb-0">
            {% include contact.html %}
           </ul>
-            
         </div>
       </section>
 
@@ -150,6 +152,9 @@ description: "Curriculo de Victor Holanda"
               Sistemas Operacionais Linux e Windows</li>
             <li>
               <i class="fa-li fa fa-check"></i>
+              Google Analytics (Básico)</li>
+            <li>
+              <i class="fa-li fa fa-check"></i>
               Git e Github</li>
             <li>
               <i class="fa-li fa fa-check"></i>
@@ -173,6 +178,9 @@ description: "Curriculo de Victor Holanda"
           <ul class="fa-ul mb-0">
             <li>
                <i class="fa-li fa fa-check"></i>
+              Google Analytics for Beginners - Novembro 2017 - Google Analytics Academy</li>
+            <li>
+               <i class="fa-li fa fa-check"></i>
               MIS &amp; Control Desk (6h) - Junho 2017 - Daisy Blanco Escola Corporativa</li>
             <li>
                <i class="fa-li fa fa-check"></i>
@@ -194,6 +202,20 @@ description: "Curriculo de Victor Holanda"
               LabX 2015.1 (16 h) e Laboratório 2015.2 (32h) - Fundação Estudar</li>
 
           </ul>
+        </div>
+      </section>
+
+      <section class="resume-section p-3 p-lg-5 d-flex flex-column" id="blog">
+        <div class="my-auto">
+          <h2 class="mb-5">Blog</h2>
+          <p>No dia 09 de Novembro de 2017, iniciei um Blog como forma de documentar o que aprendo.</p>
+          <p class="mb-0">Já escrevi no total de <b>{{site.posts.size}} posts</b>, sobre: 
+            {% for category in site.categories %}{{category[0]}}{% unless forloop.last %}, {% endunless %}{% endfor %}.
+          </p>
+          <br>
+          <a  class="btn btn-primary" href="{{ '/blog/' | prepend: site.baseurl }}" title="Visite o Blog">
+              Visite o Blog
+            </a>
         </div>
       </section>
 

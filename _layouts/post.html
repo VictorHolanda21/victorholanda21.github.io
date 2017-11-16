@@ -7,25 +7,25 @@ layout: default
   	<div class="row">
       <div class="container">
          <section class="resume-section p-3 p-lg-5 d-flex d-column" id="post">
-          <div class="my-auto">
-            <h1 class="mb-0">{{page.title}}
-            </h1>
-            {% if page.subtitle %}
-              <h3 class="mb-5">
-                {{page.subtitle}}
-              </h3>
-            {% endif %}
-           <span class="meta">Por
-                  <a href="{{site.baseurl}}/pesquisar/?q={{page.author | slugfy}}" title="Pesquisar: {{page.author}}">{{page.author}}</a>
-                  em {{ page.date | date: "%d %b %Y" }}
-                  <i class="fa fa-folder-open" aria-hidden="true"></i>
-                  {% for category in page.categories %}
-                    <a href="{{site.baseurl}}/pesquisar/?q={{category | slugfy}}" title="Pesquisar: {{category}}">
-                      {{category}}{% unless forloop.last %}, {% endunless %}
-                    </a>
-                  {% endfor %} 
-            </span>
-          </div>
+            <header class="my-auto">
+              <h1 class="mb-0">{{page.title}}
+              </h1>
+              {% if page.subtitle %}
+                <h3 class="mb-5">
+                  {{page.subtitle}}
+                </h3>
+              {% endif %}
+             <span class="meta">Por
+                    <a href="{{site.baseurl}}/pesquisar/?q={{page.author | slugfy}}" title="Pesquisar: {{page.author}}">{{page.author}}</a>
+                    em {{ page.date | date: "%d %b %Y" }}
+                    <i class="fa fa-folder-open" aria-hidden="true"></i>
+                    {% for category in page.categories %}
+                      <a href="{{site.baseurl}}/pesquisar/?q={{category | slugfy}}" title="Pesquisar: {{category}}">
+                        {{category}}{% unless forloop.last %}, {% endunless %}
+                      </a>
+                    {% endfor %} 
+              </span>
+            </header>
         </section>
       </div>
     </div>
@@ -37,8 +37,9 @@ layout: default
     <article>
         <div class="row">
           <div class="col-lg-8 col-md-10 mx-auto">
+
             
-        	{{content}}
+          {{content}}
 
           <div class="clearfix">
               <p>Tópicos:
@@ -48,12 +49,60 @@ layout: default
               </p>
             </div>
 
+          
+            <div class="article-inner">
+
+              <div class="article-authors ">
+                <div class="article-author">
+                  <div class="article-author-avatar-wrapper">
+                    <div class="article-author-avatar" style="background-image: url({{site.avatar}});"></div>
+                  </div>
+                  <div class="article-author-info">
+                  <div class="article-author-name-wrapper">
+                    <h6 class="article-author-name">{{page.author}}</h6>
+                    <div class="article-author-social-networks">
+                      <a target="_blank" href="https://linkedin.com/in/{{ site.linkedin_username }}" title="{{site.linkedin_username}}">linkedin</a>
+                      <a target="_blank" href="https://www.facebook.com/{{site.facebook_username}}" title="{{site.facebook_username}}">facebook</a>
+                      <a target="_blank" href="{{site.url}}">site</a>
+                    </div>
+                  </div>
+                  <p class="article-author-bio">{{site.description}} </p>
+                  <p class="article-author-post-meta">
+                    {{ page.date | date: "%d %b %Y" }}
+                     - atualizado em {{ page.last_modified_at | date: "%d %b %Y" }}
+                  </p>
+                </div>
+              </div>
+              <hr>
+            </div>
+            
+
+
           </div>
-
-
         </div>
     </article>
 
+<!-- End Blog Section -->
+
+    <div class="clearfix">
+      
+      {% if page.previous.url %}
+        <a  class="btn btn-primary" href="{{ page.previous.url | prepend: site.baseurl }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">
+          &larr; Anterior
+        </a>
+      {% endif %}
+
+
+      {% if page.next.url %}
+        <a class="btn btn-primary float-right" href="{{ page.next.url | prepend: site.baseurl }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">
+         Próximo &rarr;
+        </a>
+      {% endif %}
+
+
+    <hr>
+    </div>
+<!-- Comments -->
     {% if page.comments %}
       <div class="row">
         <div class="col-lg-8 col-md-10 mx-auto">
@@ -65,30 +114,11 @@ layout: default
             <h4>Disqus comentários aqui!</h4>
             {% endif %}
             </div>
-            <hr>
           </div>
           
         </div>
       </div>
 
     {% endif %}
-<!-- End Blog Section -->
 
-    <div class="clearfix">
-      
-      {% if page.previous.url %}
-        <a  class="btn btn-primary" href="{{ page.previous.url | prepend: site.baseurl }}" data-toggle="tooltip" data-placement="top" title="{{page.previous.title}}">
-          &larr; Post Anterior
-        </a>
-      {% endif %}
-
-
-      {% if page.next.url %}
-        <a class="btn btn-primary float-right" href="{{ page.next.url | prepend: site.baseurl }}" data-toggle="tooltip" data-placement="top" title="{{page.next.title}}">
-         Próximo Post &rarr;
-        </a>
-      {% endif %}
-
-
-    </div>
 <hr>
