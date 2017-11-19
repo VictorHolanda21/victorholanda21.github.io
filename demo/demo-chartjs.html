@@ -1,0 +1,104 @@
+---
+layout: demo
+title: "População Mundial ao longo do tempo"
+description: "Número de pessoas (em milhões) vivendo na terra, nos últimos 500 anos"
+---
+
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.3.0/Chart.min.js"></script>
+    <style type="text/css">
+    	
+    	body {
+		  font-family: Helvetica Neue, Arial, sans-serif;
+		  text-align: center;
+		}
+
+		.wrapper {
+		  max-width: 800px;
+		  margin: 50px auto;
+		}
+
+		h1 {
+		  font-weight: 200;
+		  font-size: 3em;
+		  margin: 0 0 0.1em 0;
+		}
+
+		h2 {
+		  font-weight: 200;
+		  font-size: 0.9em;
+		  margin: 0 0 50px;
+		  color: #999;
+		}
+
+		a {
+		  margin-top: 50px;
+		  display: block;
+		  color: #3e95cd;
+		}
+
+
+    </style>
+
+    <div class="wrapper">
+    
+      <h1>População Mundial ao longo do tempo</h1>
+      <h2>Número de pessoas (em milhões) vivendo na terra, nos últimos 500 anos</h2>
+
+      <canvas id="myChart" width="1600" height="900"></canvas>
+
+    <a href="{{site.url}}/tecnologia/2017/11/18/visualizacao-de-dados-com-chartjs.html" class="btn btn-primary">Voltar ao post</a>
+    </div>
+
+   <script type="text/javascript">
+   	// Nossos rótulos para o eixo X
+	var years = [1500,1600,1700,1750,1800,1850,1900,1950,1999,2050];
+
+	// Para desenhar as linhas
+	var africa = [86,114,106,106,107,111,133,221,783,2478];
+	var asia = [282,350,411,502,635,809,947,1402,3700,5267];
+	var europe = [168,170,178,190,203,276,408,547,675,734];
+	var latinAmerica = [40,20,10,16,24,38,74,167,508,784];
+	var northAmerica = [6,3,2,2,7,26,82,172,312,433];
+
+	
+	var ctx = document.getElementById("myChart");
+	var myChart = new Chart(ctx, {
+	  type: 'line',
+	  data: {
+	    labels: years,
+	    datasets: [
+		    { 
+			  data: africa,
+			  label: "África",
+			  borderColor: "#3e95cd",
+			  fill: false
+			},
+			{ 
+			  data: asia,
+			  label: "Asia",
+			  borderColor: "#8e5ea2",
+			  fill: false
+			},
+			{ 
+			  data: europe,
+			  label: "Europe",
+			  borderColor: "#3cba9f",
+			  fill: false
+			},
+			{ 
+			  data: latinAmerica,
+			  label: "Latin America",
+			  borderColor: "#e8c3b9",
+			  fill: false
+			},
+			{ 
+			  data: northAmerica,
+			  label: "North America",
+			  borderColor: "#c45850",
+			  fill: false
+			}
+		]
+	  }
+	});
+   </script>
