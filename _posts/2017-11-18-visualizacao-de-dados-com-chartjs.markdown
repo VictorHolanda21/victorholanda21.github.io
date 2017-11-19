@@ -4,8 +4,8 @@ comments: true
 title:  "Visualização de dados com Chart.js"
 subtitle: "Uma introdução ao Chart.js"
 author: Victor Holanda
-date:   2017-11-18 23:00:00 -0300
-last_modified_at: 2017-11-18 23:00:00 -0300
+date:   2017-11-19 20:00:00 -0300
+last_modified_at: 2017-11-19 20:00:00 -0300
 categories: [Tecnologia]
 tags: [chartjs, tutorial]
 ---
