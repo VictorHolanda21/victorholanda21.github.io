@@ -1,0 +1,96 @@
+---
+layout: demo
+title: "Gráfico de Posts do Blog"
+description: "Categoria x Posts"
+---
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.min.js"></script>
+
+ <style type="text/css">
+    	
+	body {
+	  font-family: Helvetica Neue, Arial, sans-serif;
+	  text-align: center;
+	}
+	.wrapper {
+	  max-width: 1000px;
+	  margin: 50px auto;
+	}
+
+
+	h1 {
+	  font-weight: 200;
+	  font-size: 3em;
+	  margin: 0 0 0.1em 0;
+	}
+
+	h2 {
+	  font-weight: 200;
+	  font-size: 0.9em;
+	  margin: 0 0 50px;
+	  color: #999;
+	}
+
+	a {
+	  margin-top: 50px;
+	  display: block;
+	  color: #3e95cd;
+	}
+
+
+</style>
+
+
+    <div class="wrapper">
+    	<h1>Victor Holanda</h1>
+    	<p>Total de posts: {{site.posts.size}}</p>
+		<canvas id="myskylls-polar"  style="position: relative; height:800vh; width:800vw;"></canvas>
+
+		<a href="{{site.url}}#blog" class="btn btn-primary" title="Voltar">Voltar</a>
+
+    </div>
+
+<script type="text/javascript">
+
+	{% assign sorted_cats = site.categories | sort %}
+
+	new Chart(document.getElementById("myskylls-polar"),{
+		"type": "polarArea",
+		"data": {
+			"labels": [
+			 {% for category in sorted_cats %}"{{category[0]}} ( {{category[1].size  }} )"{% unless forloop.last %}, {% endunless %}{% endfor %}
+			],
+			"datasets": [{
+				"label": "Categorias",
+				"data": [
+					{% for category in sorted_cats %}"{{category[1].size}}"{% unless forloop.last %}, {% endunless %}{% endfor %},
+				],
+				"backgroundColor": [
+					"rgb(51, 204, 51)",
+					"rgb(75, 192, 192)",
+					"rgb(255, 205, 86)",
+					"rgb(54, 162, 235)",
+					"rgb(201, 203, 207)",
+					"rgb(255, 99, 132)",
+					"rgb(153, 0, 204)"
+				]
+			}]
+		},
+		options: {
+			responsive: true,
+			title: {
+	            display: false,
+	            text: 'Categorias x Posts'
+	        },
+	        legend: {
+	           display: true,
+	           position: "top"
+	        },
+
+		}
+	});
+
+	
+
+</script>
+

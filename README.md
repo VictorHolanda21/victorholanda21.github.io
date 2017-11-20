@@ -16,7 +16,7 @@ I used two templates bootstrap,
 So, if you want to download this project almost all you will need change is in `_config.yml`, the page `index.html`, `sitemap.xml` and some pages that are in portuguese.
 
 You also have to delete the file `
-google-site-verification: google59e721dc98067966.html` because is my site verification in Google.
+google59e721dc98067966.html` because is my site verification in Google.
 
 # Installation
 
