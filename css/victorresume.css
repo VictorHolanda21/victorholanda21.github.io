@@ -12,12 +12,13 @@
 * #824027 33% marrom
 * #1aa3ff 50% azul
 * #006bb3 35% azul
+* #868e96 
 */
 
 body {
   font-family: 'Open Sans', serif;
   padding-top: 54px;
-  color: #868e96; 
+  color: #6b7178; 
   text-align: justify;
 }
 
@@ -141,6 +142,10 @@ a {
   color: #1aa3ff; }
   a:hover, a:focus, a:active {
     color: #006bb3; }
+
+.highlighter-rouge {
+  margin-bottom: 10px;
+}
 
 /* Blog */
 
