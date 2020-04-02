@@ -10,7 +10,7 @@ category: Tecnologia
 tags: ["github", "github pages", "jekyll", "hospedagem", "Ruby", "programação", "Rubygems", "rbenv", "Bundler", "terminal", "Ubuntu"]
 ---
 
-# Sumário
+### Sumário
 
 ---------------------------------
 1. [Acesse a pasta HOME](#1-acesse-a-pasta-home "Acesse a pasta HOME"){:class="js-scroll-trigger"}

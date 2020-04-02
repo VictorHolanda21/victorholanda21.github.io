@@ -1,0 +1,146 @@
+I"W<h3 id="1--o-que-é-o-django">1.  O que é o Django?</h3>
+
+<p>No site oficial do Django ele define da seguinte forma:</p>
+
+<blockquote>
+  <p>Django é um Framework Web de alto nível em Python que encoraja o desenvolvimento rápido e o design limpo e pragmático. Construído por desenvolvedores experientes, ele cuida de grande parte do aborrecimento de um desenvolvimento Web, fazendo com que você possa focar em escrever suas aplicações sem precisar reinventar a roda. É gratuito e códio aberto.</p>
+</blockquote>
+
+<h3 id="2--inicie-com-o-django">2.  Inicie com o Django:</h3>
+
+<h5 id="21--tenha-certeza-que-você-tem-o-python3-instalado">2.1.  Tenha certeza que você tem o Python3 instalado:</h5>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3 --version
+</code></pre></div></div>
+
+<h5 id="22-crie-um-diretório-para-facilitar">2.2. Crie um diretório para facilitar:</h5>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mkdir djangoprojeto ; cd djangoprojeto
+</code></pre></div></div>
+
+<h5 id="23-crie-um-ambiente-virtual-para-facilitar-no-desenvolvimento">2.3. Crie um ambiente virtual para facilitar no desenvolvimento:</h5>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python3 -m venv myvenv
+</code></pre></div></div>
+
+<h5 id="24-caso-você-tenha-algum-problema-execute-o-comando-e-tente-novamente">2.4. Caso você tenha algum problema execute o comando e tente novamente:</h5>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt install python3-venv
+</code></pre></div></div>
+
+<h5 id="25-ative-o-ambiente">2.5. Ative o ambiente:</h5>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>source myvenv/bin/activate
+</code></pre></div></div>
+
+<p>Lembre-se de substituir o nome “myvenv” pelo nome que você definiu anteriormente de seu ambiente virtual.</p>
+
+<h5 id="26-caso-queira-desativar-é-só-digitar">2.6. Caso queira desativar é só digitar:</h5>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>deactivate
+</code></pre></div></div>
+
+<h5 id="27-instalar-o-pip">2.7. Instalar o pip</h5>
+
+<p>Com seu ambiente virtual ativo, instale a última versão do pip, que será usado para instalar o django e outros softwares durante o desenvolvimento:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python -m pip install --upgrade pip
+</code></pre></div></div>
+
+<h5 id="28-e-então-instale-o-django">2.8. E então instale o Django:</h5>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip install Django==3.0.5
+</code></pre></div></div>
+
+<h5 id="29-instale-usando-o-requirementstxt">2.9. Instale usando o “requirements.txt”:</h5>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>touch requirements.txt ; echo Django~=2.2.4 ; cat requirements.txt ; pip install -r requirements.txt
+</code></pre></div></div>
+
+<h5 id="210-atualize-sempre-o-requirementstxt">2.10. Atualize sempre o “requirements.txt”:</h5>
+
+<p>Tenha o costume que sempre após instalar algum programa no seu projeto atualizar o arquivo requirements.txt:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>pip freeze &gt; requirements.txt
+</code></pre></div></div>
+
+<h5 id="211-crie-um-projeto">2.11. Crie um projeto:</h5>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>django-admin startproject mysite .
+
+</code></pre></div></div>
+
+<p>Você terá algo assim:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>djangoprojeto
+├───manage.py
+├───mysite
+│        settings.py
+│        urls.py
+│        wsgi.py
+│        __init__.py
+└───requirements.txt
+</code></pre></div></div>
+
+<h5 id="212-em-settingspy--faça-as-seguintes-alterações">2.12. Em <em>settings.py</em>  faça as seguintes alterações:</h5>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>LANGUAGE_CODE = 'pt-BR'
+TIME_ZONE = 'America/Fortaleza'
+
+STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'static')
+
+ALLOWED_HOSTS = ['127.0.0.1', '.pythonanywhere.com']
+</code></pre></div></div>
+
+<h5 id="213-crie-um-banco-de-dados">2.13. Crie um banco de dados:</h5>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python manage.py migrate
+</code></pre></div></div>
+
+<h5 id="214-rode-o-servidor">2.14. Rode o servidor:</h5>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python manage.py runserver
+</code></pre></div></div>
+
+<p>Caso queira disponibilizar para acesso na rede interna:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python manage.py runserver 0:8000
+</code></pre></div></div>
+
+<p>Acesse:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://127.0.0.1:8000/
+</code></pre></div></div>
+
+<h5 id="215-inicie-uma-app">2.15. Inicie uma app:</h5>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>django-admin startapp myapp
+</code></pre></div></div>
+
+<h5 id="216-rodar-as-migrações">2.16. Rodar as migrações:</h5>
+
+<p>Quando criar os modelos execute o comando</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>python ../manage.py makemigrations
+</code></pre></div></div>
+
+<h5 id="216-excluir-banco-de-dados-e-migrations">2.16. Excluir banco de dados e migrations:</h5>
+
+<p>Durante os testes pode ser interessante excluir banco de dados e migrations, execute os seguintes comandos:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>find -name "__pycache__" -exec rm -rf {} \;
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>find -name "00*" -exec rm -rf {} \;
+</code></pre></div></div>
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>find -name "db.sqlite3" -exec rm -rf {} \;
+
+</code></pre></div></div>
+
+<h3 id="3-para-aprender-mais">3. Para aprender mais:</h3>
+
+<ul>
+  <li><a href="https://tutorial.djangogirls.org/pt/">Django Girls</a></li>
+  <li><a href="https://github.com/rg3915/tutoriais/tree/master/django-basic">Django Basic</a></li>
+</ul>
+:ET
