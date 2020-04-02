@@ -1,0 +1,345 @@
+I"GS<p>Encontrei um <a href="http://tobiasahlin.com/blog/introduction-to-chartjs/" title="Tobias: Introduction to Chart.js" target="_blank">tutorial sobre Chart.js</a>, o tutorial é bem explicativo e foi feito por um sueco chamado Tobias. Então, resolvi traduzir, espero não ter cometido graves erros na tradução.</p>
+
+<hr />
+
+<ol>
+  <li><a href="#introdução" title="Introdução" class="js-scroll-trigger">Introdução</a></li>
+  <li><a href="#o-que-nós-iremos-construir" title="O que nós iremos construir" class="js-scroll-trigger">O que nós iremos construir</a></li>
+  <li><a href="#o-que-você-irá-precisar" title="O que você irá precisar" class="js-scroll-trigger">O que você irá precisar</a></li>
+  <li><a href="#espere-o-que-é-chartjs" title="Espere, o que é Chart.js?" class="js-scroll-trigger">Espere, o que é Chart.js?</a></li>
+  <li><a href="#passo-1-adicionar-chartjs" title="Passo 1: Adicionar Chart.js" class="js-scroll-trigger">Passo 1: Adicionar Chart.js</a></li>
+  <li><a href="#passo-2-prepare-o-lugar-em-seu-html-para-renderizar-o-gráfico" title="Passo 2: Prepare o lugar em seu HTML para renderizar o gráfico" class="js-scroll-trigger">Passo 2: Prepare o lugar em seu HTML para renderizar o gráfico</a></li>
+  <li><a href="#passo-3-prepare-os-dados" title="Passo 3: Prepare os dados" class="js-scroll-trigger">Passo 3: Prepare os dados</a></li>
+  <li><a href="#passo-4-desenhando-a-linha" title="Passo 4: Desenhando a linha!" class="js-scroll-trigger">Passo 4: Desenhando a linha!</a></li>
+  <li><a href="#passo-5-estilo-na-linha" title="Passo 5: Estilo na linha" class="js-scroll-trigger">Passo 5: Estilo na linha</a></li>
+  <li><a href="#passo-6-adicione-o-resto-dos-dados" title="Passo 6: Adicione o resto dos dados" class="js-scroll-trigger">Passo 6: Adicione o resto dos dados</a></li>
+</ol>
+
+<hr />
+
+<h4 id="introdução">Introdução</h4>
+
+<p>Você pode contar histórias poderosas com dados. Se você quer visualizar dados em um post no blog, no seu site, ou em uma apresentação, há poucas bibliotecas que podem ajudar você alcançar resultados impressionantes com relativamente pouco trabalho.</p>
+
+<p><a href="http://www.chartjs.org/" title="Oficial Chart.js" target="_blank">Chart.js</a> é uma dessas bibliotecas. Quando eu estava ensinando datas em Hyper Island, esta é uma das ferramentas essenciais incluída no programa de Estratégia de Dados. Embora menos flexível e capaz que <a href="https://d3js.org/" title="Oficial D3.js" target="_blank">D3</a>, é mais fácil se envolver e começar, mas poderoso suficiente para cobrir mais que apenas suas necessidades básicas. Neste tutorial introdutório nós iremos construir um gráfico interativo e ter uma breve visão geral da capacidade do framework.</p>
+
+<h4 id="o-que-nós-iremos-construir">O que nós iremos construir</h4>
+
+<p>Nós iremos criar um simples mais poderoso gráfico de linhas responsivo, visualizando a população do mundo durante os últimos 500 anos, e uma predição para 20050:</p>
+
+<p><strong>Números de terráqueos (em milhões)</strong></p>
+<canvas id="myChart" width="200" height="100"></canvas>
+
+<p>Nós iremos customizar o gráfico para usar nossas próprias cores, e seremos capazes de clicar na legenda para alternar a visibilidade das linhas correspondentes, bem como visualizar detalhes do ponto. Você pode baixar o <a href="http://tobiasahlin.com/demo/chartjs-intro/static/final.zip" title="Download final" target="_blank">resultado final</a> ou visualizar uma <a href="http://localhost:4000/demo/demo-chartjs.html" title="Demonstração" target="_blank">demonstração</a>.</p>
+
+<h4 id="o-que-você-irá-precisar">O que você irá precisar</h4>
+
+<p>Nenhuma experiência prévia com HTML, CSS ou JavaScript é necessária para avançar esse tutorial. Iniciante, algumas experiências irão ajudar você compreender as nuances do que está acontecendo, mas menos considerável seu nível de expertise, ao final do tutorial, você terá um gráfico. Tudo que você precisa é um editor de texto (eu recomendo <a href="https://www.sublimetext.com/" title="Oficial Sublime Text" target="_blank">Sublime</a> ou <a href="https://atom.io/" title="Oficial Atom" target="_blank">Atom</a>).</p>
+
+<h4 id="espere-o-que-é-chartjs">Espere, o que é Chart.js?</h4>
+
+<p><a href="http://www.chartjs.org/" title="Oficial Chart.js" target="_blank">Chart.js</a> é uma biblioteca de código aberto mantida pela comunidade (<a href="https://github.com/chartjs/Chart.js" title="Github Chart.js" target="_blank">está disponível no GitHub</a>) que ajuda você facilmente visualizar dados usando JavaScript. É similar para <a href="https://gionkunz.github.io/chartist-js/" title="Oficial Chartist" target="_blank">Chartist</a> e <a href="https://developers.google.com/chart/" title="Google Chart" target="_blank">Google Charts</a>. Suporta 8 diferentes tipos de gráficos (incluindo barras, linhas e círculo) e eles serão todos responsivos. Em outras palavras, você irá configurar seu gráfico uma vez, e Chart.js irá fazer o trabalho pesado para você e fazer claro que isto esteja sempre legível (por exemplo removendo alguns detalhes não críticos se o gráfico for menor).</p>
+
+<p>De uma forma geral, isto é o que você precisa fazer para desenhar um gráfico com Chart.js:</p>
+
+<ol>
+  <li>Definir onde na sua página desenhar o gráfico.</li>
+  <li>Definir qual tipo de gráfico você quer desenhar.</li>
+  <li>Fornecer ao Chart.js dados, títulos e outras opções.</li>
+</ol>
+
+<p>… e você irá ter um belo, responsivo, gráfico! Embora não aprofundamos muito nas mudanças do desenho de nosso gráfico nesse tutorial, gráficos do Chart.js são altamente customizáveis. Como uma regra, tudo que você pode ver pode afetar e, embora os gráficos parecem bons sem muita customizações, você provavelmente será capaz de realizar todas as suas visões de design (ou de outra pessoa) com algum esforço extra.</p>
+
+<h5 id="passo-1-adicionar-chartjs">Passo 1: Adicionar Chart.js</h5>
+
+<p>Primeiro nós precisamos adicionar Chart.js para nossa página então podemos usar a biblioteca. Para este projeto, eu preparei um simples parque de diversão com um arquivo HTML com só o essencial. Baixe o ponto inicial e abra o diretório, e você deve ver três arquivos:</p>
+<ul>
+  <li>index.html</li>
+  <li>style.css</li>
+  <li>script.js</li>
+</ul>
+
+<p>Eu adicionei algumas estilizações básicas para o <code class="highlighter-rouge">style.css</code>, mas <code class="highlighter-rouge">script.js</code> está completamente vazio, este é onde iremos adicionar o código para desenhar nosso gráfico em um momento. Por agora, abra <code class="highlighter-rouge">index.html</code> em um editor de texto. Para usar Chart.js nós precisamos linkar a biblioteca dentro de nosso <code class="highlighter-rouge">head</code>. Você poderia baixar a biblioteca e hospedá-la por conta própria, mas o mais fácil (e provavelmente mais rápido) maneira é apenas usar CND (<em>content delivery network</em> - rede de entrega de conteúdo, em português - nesse exemplo, uma maneira elegante de dizer “pessoas legais que estão hospedando as bibliotecas que precisamos”)</p>
+
+<p>Se você ir para chartjs.org e clicar na Documentação, você irá ver um link para o CDN de recomendação deles. Siga o link, e procure por a URL terminando com <code class="highlighter-rouge">Chart.min.js</code>. No momento que escrevia, a última versão é <code class="highlighter-rouge">2.5.0</code>:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"&gt;&lt;/script&gt;
+</code></pre></div></div>
+
+<p>Copie e cole esta linha na linha 5 em <code class="highlighter-rouge">index.html</code>. Depois de colado, seu <code class="highlighter-rouge">head</code> deve parecer com isso:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;head&gt;
+  &lt;title&gt;World population&lt;/title&gt;
+  &lt;script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.5.0/Chart.min.js"&gt;&lt;/script&gt;
+  &lt;link rel="stylesheet" type="text/css" href="style.css"&gt;
+&lt;/head&gt;
+</code></pre></div></div>
+
+<h5 id="passo-2-prepare-o-lugar-em-seu-html-para-renderizar-o-gráfico">Passo 2: Prepare o lugar em seu HTML para renderizar o gráfico</h5>
+
+<p>A última coisa que nós precisamos preparar antes de nós iniciarmos a visualização de nossos dados é definir uma área em nosso HTML onde nós queremos desenhar o gráfico. Para Chart.js você faz isso adicionando um elemento canvas, e configurando <code class="highlighter-rouge">width</code> e <code class="highlighter-rouge">height</code> para definir a proporção de seu gráfico.</p>
+
+<p>Na linha 13 em <code class="highlighter-rouge">index.html</code>, copie e cole esta linha para criar seu elemento canvas:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;canvas id="myChart" width="1600" height="900"&gt;&lt;/canvas&gt;
+</code></pre></div></div>
+
+<p>Perceba que nós adicionamos um <code class="highlighter-rouge">id</code>(<code class="highlighter-rouge">myChart</code>) para o elemento <code class="highlighter-rouge">canvas</code> para que nós possamos usar depois para referenciar ou desenhar um elemento gráfico em JavaScript ou CSS. Como o ID está configurado não tem significância para o Chart.js; você pode nomear da forma que você quiser. O que importa é que você use o mesmo ID quando você referência em JavaScript ou CSS. Se você está adicionando vários gráfico para uma página, apenas tenha certeza que cada ID é único (você poderia por exemplo dá seus gráficos nomes mais específicos, como <code class="highlighter-rouge">populationChart</code> ou <code class="highlighter-rouge">regionChart</code>).</p>
+
+<h5 id="passo-3-prepare-os-dados">Passo 3: Prepare os dados</h5>
+
+<p>Os dados que nós estamos usando é de um artigo da <a href="https://en.wikipedia.org/wiki/World_population#Population_growth_by_region" title="Wikipedia World Population" target="_blank">Wikipedia sobre a população mundial</a>, e inclui uma predição da população mundial da <a href="https://esa.un.org/unpd/wpp/Publications/Files/Key_Findings_WPP_2015.pdf" title="UN’s World Population Prospects report" target="_blank">UN’s relatório de Prospecção da População Mundial</a>. Aqui está os dados cru que estamos usando:</p>
+
+<p><strong>Histórico Mundial e predição da população (em milhões)</strong></p>
+
+<table>
+  <thead>
+    <tr>
+      <th>Country</th>
+      <th style="text-align: right">1500</th>
+      <th style="text-align: right">1600</th>
+      <th style="text-align: right">1700</th>
+      <th style="text-align: right">1750</th>
+      <th style="text-align: right">1800</th>
+      <th style="text-align: right">1850</th>
+      <th style="text-align: right">1900</th>
+      <th style="text-align: right">1950</th>
+      <th style="text-align: right">1999</th>
+      <th style="text-align: right">2050</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>África</td>
+      <td style="text-align: right">86</td>
+      <td style="text-align: right">114</td>
+      <td style="text-align: right">106</td>
+      <td style="text-align: right">106</td>
+      <td style="text-align: right">107</td>
+      <td style="text-align: right">111</td>
+      <td style="text-align: right">133</td>
+      <td style="text-align: right">221</td>
+      <td style="text-align: right">783</td>
+      <td style="text-align: right">2478</td>
+    </tr>
+    <tr>
+      <td>Asia</td>
+      <td style="text-align: right">282</td>
+      <td style="text-align: right">350</td>
+      <td style="text-align: right">411</td>
+      <td style="text-align: right">502</td>
+      <td style="text-align: right">635</td>
+      <td style="text-align: right">809</td>
+      <td style="text-align: right">947</td>
+      <td style="text-align: right">1402</td>
+      <td style="text-align: right">3700</td>
+      <td style="text-align: right">5267</td>
+    </tr>
+    <tr>
+      <td>Europa</td>
+      <td style="text-align: right">168</td>
+      <td style="text-align: right">170</td>
+      <td style="text-align: right">178</td>
+      <td style="text-align: right">190</td>
+      <td style="text-align: right">203</td>
+      <td style="text-align: right">276</td>
+      <td style="text-align: right">408</td>
+      <td style="text-align: right">547</td>
+      <td style="text-align: right">675</td>
+      <td style="text-align: right">734</td>
+    </tr>
+    <tr>
+      <td>América Latina</td>
+      <td style="text-align: right">40</td>
+      <td style="text-align: right">20</td>
+      <td style="text-align: right">10</td>
+      <td style="text-align: right">16</td>
+      <td style="text-align: right">24</td>
+      <td style="text-align: right">38</td>
+      <td style="text-align: right">74</td>
+      <td style="text-align: right">167</td>
+      <td style="text-align: right">508</td>
+      <td style="text-align: right">784</td>
+    </tr>
+    <tr>
+      <td>América do Norte</td>
+      <td style="text-align: right">6</td>
+      <td style="text-align: right">3</td>
+      <td style="text-align: right">2</td>
+      <td style="text-align: right">2</td>
+      <td style="text-align: right">7</td>
+      <td style="text-align: right">26</td>
+      <td style="text-align: right">82</td>
+      <td style="text-align: right">172</td>
+      <td style="text-align: right">312</td>
+      <td style="text-align: right">433</td>
+    </tr>
+  </tbody>
+</table>
+
+<p>Desenhar linhas e adicionar rótulos aos eixos, Chart.js espera o dado seja passado em forma de <a href="https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Array" title="Array" target="_blank">array</a>, como: <code class="highlighter-rouge">[10, 4, 7]</code>. Nós iremos usar 6 arrays no total: um para todos os anos serem mostrados no eixo X (1500-2050), e um array para cada país, contendo os dados da população. Então todos nós precisamos fazer é copiar cada linha da nossa tabela acima, separar cada valor com vírgula, e então terminar e iniciar a lista com [] - colchetes.</p>
+
+<p>A tabela acima, reformatada para arrays, parecerá como:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>// Nossos rótulos para o eixo X
+var years = [1500,1600,1700,1750,1800,1850,1900,1950,1999,2050];
+
+// Para desenhar as linhas
+var africa = [86,114,106,106,107,111,133,221,783,2478];
+var asia = [282,350,411,502,635,809,947,1402,3700,5267];
+var europe = [168,170,178,190,203,276,408,547,675,734];
+var latinAmerica = [40,20,10,16,24,38,74,167,508,784];
+var northAmerica = [6,3,2,2,7,26,82,172,312,433];
+</code></pre></div></div>
+
+<p>Copie todas estas linhas, e cole elas dentro de <code class="highlighter-rouge">script.js</code></p>
+
+<h5 id="passo-4-desenhando-a-linha">Passo 4: Desenhando a linha!</h5>
+
+<p>Finalmente! Nós chegamos no momento da verdade. Visualização dos dados com Graph.js será bem direto. Tudo que nós precisamos fazer é definir qual o gráfico que nós queremos desenhar, e passar os dados que nós queremos visualizar. Vamos iniciar desenhando uma simples linha para ver se nós temos funcionando: abaixo dos dados que você passou dentro de <code class="highlighter-rouge">script.js</code>, adicione estas linhas de JavaScript:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var ctx = document.getElementById("myChart");
+var myChart = new Chart(ctx, {
+  type: 'line',
+  data: {
+    labels: years,
+    datasets: [
+      { 
+        data: africa
+      }
+    ]
+  }
+});
+</code></pre></div></div>
+
+<p>… abra <code class="highlighter-rouge">index.html</code> em um navegador, atualize e… tada! Você criou um gráfico! Não é o mais lindo, mas hey, está aumentando e está parecendo profissional!</p>
+
+<p>O que está acontecendo nesse pedaço de código? Vamos quebrá-lo abaixo. Primeiro, nós alocamos o elemento <a href="https://developer.mozilla.org/en-US/docs/Web/API/Canvas_API" title="Canvas" target="_blank"><code class="highlighter-rouge">canvas</code></a> que nós adicionamos mais cedo para nosso arquivo <code class="highlighter-rouge">index.html</code> (note “myChart”):</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>var ctx = document.getElementById("myChart");
+</code></pre></div></div>
+
+<p>Então, usando aquele canvas elemento, nós criamos um gráfico de linha (<code class="highlighter-rouge">type: 'line'</code>), e passamos alguns de nossos dados. <code class="highlighter-rouge">labels: years</code> configurando nosso array de <code class="highlighter-rouge">years</code> (que nós criamos mais cedo) para os rótulos do eixo-x, e <code class="highlighter-rouge">data: africa</code> usamos nossa variável <code class="highlighter-rouge">africa</code> para desenhar a linha.</p>
+
+<p>Vamos tentar corrigir agora. Você deve ter percebido que nossa linha está faltando o rótulo (dizendo indefinido no topo do gráfico), e não está muito colorido. Boo! Vamos fazê-lo.</p>
+
+<h5 id="passo-5-estilo-na-linha">Passo 5: Estilo na linha</h5>
+
+<p>Inicie um nome a nossa primeira linha. Depois de <code class="highlighter-rouge">data: africa</code>, adicione uma vírgula (<strong>hey!</strong> Eu estou falando sério sobre a vírgula (relembre a vírgula!), esqueça ela e tudo quebra), crie uma nova linha e adicione <code class="highlighter-rouge">label: "África"</code>:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{ 
+  data: africa,
+  label: "África"
+}
+</code></pre></div></div>
+
+<p>Para configurar a cor da borda e remover a grande área cinza, adicione outra vírgula depois de <code class="highlighter-rouge">label: "África"</code> e adicione estas duas linhas:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>borderColor: "#3e95cd",
+fill: false
+</code></pre></div></div>
+
+<p>Bem não é tudo (atualize e você deve ver uma linha azul chamada África)!</p>
+
+<h5 id="passo-6-adicione-o-resto-dos-dados">Passo 6: Adicione o resto dos dados</h5>
+
+<p>Tudo que nós precisamos agora é copiar o código de África e colar outras quatro vezes, adicionando uma vírgula depois de cada <code class="highlighter-rouge">}</code>. Faça a lista das linhas e tenha certeza que você usou todas as nossas variáveis de regiões (<code class="highlighter-rouge">asia</code>, <code class="highlighter-rouge">europe</code>, etc. ), e nomeie de acordo. Um vez feito, parecerá com algo assim:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>{ 
+  data: africa,
+  label: "África",
+  borderColor: "#3e95cd",
+  fill: false
+},
+{ 
+  data: asia,
+  label: "Asia",
+  borderColor: "#3e95cd",
+  fill: false
+},
+{ 
+  data: europe,
+  label: "Europa",
+  borderColor: "#3e95cd",
+  fill: false
+},
+{ 
+  data: latinAmerica,
+  label: "América Latina",
+  borderColor: "#3e95cd",
+  fill: false
+},
+{ 
+  data: northAmerica,
+  label: "América do Norte",
+  borderColor: "#3e95cd",
+  fill: false
+}
+</code></pre></div></div>
+
+<p>Se você atualizar, você deverá visualizar um gráfico da população da terra ao longo do tempo. Hooray!</p>
+
+<p>As linhas estão todas da mesma cor. Você pode colocar qualquer cor que você quiser para uma linha, mas para usar o mesmo esquema de cor como em meu gráfico de exemplo, mude o valor de<code class="highlighter-rouge">borderColor</code> para cada nova região: <strong><code class="highlighter-rouge">#8e5ea2</code></strong>, <strong><code class="highlighter-rouge">#3cba9f</code></strong>, <strong><code class="highlighter-rouge">#e8c3b9</code></strong>, <strong><code class="highlighter-rouge">#c45850</code></strong>.</p>
+
+<p>E com isto, você terminou! Seu gráfico finalizado deve parecer com isso:</p>
+
+<p><a href="/demo/demo-chartjs.html" class="btn btn-primary" target="_blank">Ver resultado</a></p>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.7.1/Chart.js"></script>
+
+<script type="text/javascript">
+
+	// Nossos rótulos para o eixo X
+	var years = [1500,1600,1700,1750,1800,1850,1900,1950,1999,2050];
+
+	// Para desenhar as linhas
+	var africa = [86,114,106,106,107,111,133,221,783,2478];
+	var asia = [282,350,411,502,635,809,947,1402,3700,5267];
+	var europe = [168,170,178,190,203,276,408,547,675,734];
+	var latinAmerica = [40,20,10,16,24,38,74,167,508,784];
+	var northAmerica = [6,3,2,2,7,26,82,172,312,433];
+
+	
+	var ctx = document.getElementById("myChart");
+	var myChart = new Chart(ctx, {
+	  type: 'line',
+	  data: {
+	    labels: years,
+	    datasets: [
+		    { 
+			  data: africa,
+			  label: "África",
+			  borderColor: "#3e95cd",
+			  fill: false
+			},
+			{ 
+			  data: asia,
+			  label: "Asia",
+			  borderColor: "#8e5ea2",
+			  fill: false
+			},
+			{ 
+			  data: europe,
+			  label: "Europa",
+			  borderColor: "#3cba9f",
+			  fill: false
+			},
+			{ 
+			  data: latinAmerica,
+			  label: "América Latina",
+			  borderColor: "#e8c3b9",
+			  fill: false
+			},
+			{ 
+			  data: northAmerica,
+			  label: "América do Norte",
+			  borderColor: "#c45850",
+			  fill: false
+			}
+		]
+	  }
+	});
+
+</script>
+
+:ET

@@ -1,0 +1,222 @@
+I"O0<p>Iniciei um trabalho voluntário para o <strong>Centro Débora Mesquita - CDM</strong>, e tive que aprender a utilizar o WordPress. O <strong>WordPress</strong> é um CMS (Custom Management System ou Sistema de Gerenciamento de Conteúdo) largamente utilizado por sites, blogs e etc.. Para facilitar o aprendizado e evitar possíveis erros que afetassem o site real, configurei minha máquina de forma a simular um servidor WEB. Dessa forma, poderia criar um site parecido, testar e propor melhorias. Com isso, resolvi descrever o passo a passo de configuração em uma máquina Linux.</p>
+
+<hr />
+
+<ol>
+  <li><a href="#1-lamp-server-e-phpmyadmin" title="LAMP Server e phpMyAdmin" class="js-scroll-trigger">LAMP Server e phpMyAdmin</a></li>
+  <li><a href="#2-instalando-o-lamp-server-e-phpmyadmin" title="Instalando o LAMP Server e phpMyAdmin" class="js-scroll-trigger">Instalando o LAMP Server e phpMyAdmin</a></li>
+  <li><a href="#3-instalando-o-wordpress" title="Instalando o WordPress" class="js-scroll-trigger">Instalando o WordPress</a></li>
+  <li><a href="#4-configurando-o-mysql" title="Configurando o MySQL" class="js-scroll-trigger">Configurando o MySQL</a></li>
+  <li><a href="#5-configurações-extras" title="Configurações extras" class="js-scroll-trigger">Configurações extras</a></li>
+</ol>
+
+<hr />
+
+<p>O primeiro passo é instalar o LAMP Server e o phpMyAdmin. Mas o que é LAMP Server e o phpMyAdmin?</p>
+
+<h4 id="1-lamp-server-e-phpmyadmin">1. LAMP Server e phpMyAdmin</h4>
+
+<p>Primeiramente, vamos entender o que é o LAMP.</p>
+
+<p>O LAMP é uma combinação de softwares livres e de código aberto. O acrônimo LAMP refere-se as primeiras letras de:</p>
+
+<ul>
+  <li>Linux (sistema operacional),</li>
+  <li>Apache (servidor web),</li>
+  <li>MariaDB ou MySQL (software de banco de dados) e</li>
+  <li>PHP (linguagens de programação) ou Python,</li>
+</ul>
+
+<p>Em geral é usado LAMP para dizer que é um instalador de Apache, Mysql e PHP para Linux, sendo denominados como WAMP os softwares que tem a mesma destinação para sistemas operacionais Windows, MAMP para Macintosh e XAMPP quando refere-se a qualquer dos diferentes sistemas operativos.</p>
+
+<p>Agora, vamos entender o que é phpMyAdmin.</p>
+
+<p>O phpMyAdmin é uma aplicação web livre e de código aberto desenvolvido em PHP para administração de banco de dados MySQL pelo navegador WEB. A partir desse sistema é possível gerenciar banco de dados, ferramenta obrigatória em quase todas as hospedagem de site da web.</p>
+
+<p>Finalmente, vamos partir para instalação e configuração do sistema.</p>
+
+<p>Eu sou um usuário Linux, então irei fazer o passo a passo no Linux. Para usuários Windows, uma alternativa que recomendo é usar uma virtualização do sistema Linux no computador, ou seja, utilizar um software como o VirtualBox para executar o Linux dentro de seu Windows. Sem mais enrolações, vamos iniciar.</p>
+
+<h4 id="2-instalando-o-lamp-server-e-phpmyadmin">2. Instalando o LAMP Server e phpMyAdmin</h4>
+
+<p>Abra o terminal Linux, após isso iremos verificar se há alguma atualização para o sistema:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get update
+</code></pre></div></div>
+
+<p>Após isso iremos digitar o comando para instalar o LAMP Server e o phpMyAdmin de uma vez só:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get install lamp-server^ phpmyadmin
+</code></pre></div></div>
+
+<p>Obs.: não esqueça de inserir o ^ ele informa ao sistema que os dois software irão trabalhar em conjunto evitando assim futuras dores de cabeças e configurações.</p>
+
+<p>Após confirmar a continuação da instalação ele vai solicitar algumas perguntas:</p>
+
+<ol>
+  <li>Senha do usuário para o MySQL (não esqueça a senha);</li>
+  <li>Qual o servidor web que será utilizado, escolha apache2, aperte espaço para selecionar;</li>
+  <li>Configurar a base de dados para o phpMyAdmin, confirme;</li>
+  <li>Informe a senha utilizada para o MySql, colocada anteriormente;</li>
+</ol>
+
+<p>Assim que finalizar, para testar crie um arquivo no diretório do servidor:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo vi /var/www/info.php
+</code></pre></div></div>
+
+<p>Digite dentro do arquivo (antes aperte <code class="highlighter-rouge">i</code> para inserir conteúdo):</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>&lt;?
+phpinfo();
+?&gt;
+</code></pre></div></div>
+
+<p>Salve. Para salvar aperte a tecla ESC e digite <code class="highlighter-rouge">:wq!</code>.
+Acesse no seu navegador o endereço <code class="highlighter-rouge">http://localhost/info.php</code>.</p>
+
+<p>Se tudo der certo, você irá visualizar uma tela com informações de seu sistema e do servidor web.</p>
+
+<h4 id="3-instalando-o-wordpress">3. Instalando o WordPress</h4>
+
+<p>Agora, vamos para a segunda etapa que é instalar o WordPress.</p>
+
+<p>Baixe o WordPress atualizado diretamente do site oficial, faça o download do arquivo com o final <code class="highlighter-rouge">.tar.gz</code>.</p>
+
+<p>Finalizado o download, no terminal digite para entrar no diretório que está o WordPress:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd Downloads/
+</code></pre></div></div>
+
+<p>Agora vamos descompactar o arquivo, onde se lê <em>version</em> substitua pela versão do WordPress que você fez download, uma ajuda é apertar TAB assim que digitar <code class="highlighter-rouge">word</code>:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>tar -xzvf wordpress-version.tar.gz
+</code></pre></div></div>
+
+<p>Vamos criar um novo diretório para nossa aplicação, onde se lê <code class="highlighter-rouge">nome_do_diretorio</code> substitua por um nome de sua preferência:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo mkdir /var/www/nome_do_diretorio
+</code></pre></div></div>
+
+<p>Agora vamos copiar todos os arquivos do WordPress para o diretório que criamos anteriormente:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo cp -r wordpress/* /var/www/nome_do_diretorio
+</code></pre></div></div>
+
+<p>Próximo passo é recomendável, não obrigatório, que é editar o arquivo <code class="highlighter-rouge">apache2.conf</code>:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo vi /etc/apache2/apache2.conf
+</code></pre></div></div>
+
+<p>No fim do arquivo insira:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>AddType application/x-httpd-php .html
+</code></pre></div></div>
+
+<p>Essa linha ajuda quando se tem o site fora da pasta <code class="highlighter-rouge">/var/www</code>.</p>
+
+<p>Agora vamos aplicar as alterações realizadas reiniciando o servidor:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>service apache2 reload
+</code></pre></div></div>
+
+<h4 id="4-configurando-o-mysql">4. Configurando o MySQL</h4>
+
+<p>Certo, agora vamos configurar o banco de dados da aplicação:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>mysql -u root -p
+</code></pre></div></div>
+
+<p>Primeiro vamos criar um banco de dados, substitua <code class="highlighter-rouge">NomeDoBanco</code> por um nome de sua preferência:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CREATE DATABASE NomeDoBanco;
+</code></pre></div></div>
+
+<p>Agora, vamos criar um usuário para o banco, substitua <code class="highlighter-rouge">UsuarioDoBanco</code> e <code class="highlighter-rouge">SenhaDoBanco</code> por um nome de sua preferência:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>CREATE USER 'UsuarioDoBanco'@'localhost' IDENTIFIED BY 'SenhaDoBanco';
+</code></pre></div></div>
+
+<p>Garantindo privilegios de uso do banco para o usuário:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>GRANT ALL PRIVILEGES ON NomeDoBanco.* TO 'UsuarioDoBanco' IDENTIFIED BY 'SenhaDoBanco';
+</code></pre></div></div>
+
+<p>Pronto, só sair do mysql:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>exit
+</code></pre></div></div>
+
+<p>Próximo passo, informar ao WordPress sobre nosso banco de dados. 
+Vamos copiar um arquivo, o <code class="highlighter-rouge">sample</code> indica que é um arquivo de amostra.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo cp /var/www/nome_do_diretorio/wp-config-sample.php /var/www/nome_do_diretorio/wp-config.php
+</code></pre></div></div>
+
+<p>Agora vamos editar o novo arquivo:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo vi /var/www/nome_do_diretorio/wp-config.php
+</code></pre></div></div>
+
+<p>Procure a linha que contém as funções parecido com o que está abaixo e substitua por suas informações:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>define('DB_NAME', 'NomeDoBanco');
+define('DB_USER', 'UsuarioDoBanco');
+define('DB_PASSWORD', 'SenhaDoBanco');
+</code></pre></div></div>
+
+<p>Salva. Saia do documento e reinicie o apache:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo service apache2 restart
+</code></pre></div></div>
+
+<p>Agora, no navegador, acesse:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>http://localhost/nome_do_diretorio
+</code></pre></div></div>
+
+<h4 id="5-configurações-extras">5. Configurações extras</h4>
+
+<p>Os próximos passos, são passos que recomendo vamos trocar o dono do diretório usando o comando <code class="highlighter-rouge">chwon</code>, isso é necessário para que o WordPress tenha permissão de escrita e possa instalar plugins, fazer uploads de imagens e etc., no terminal digite:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo chwon www-data:www-data -R /var/www/nome_do_diretorio/*
+</code></pre></div></div>
+
+<p>Agora fornecer permissão de escrita ao usuário:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo chmod -R g+w /var/www/nome_do_diretorio/*
+</code></pre></div></div>
+
+<p>Após isso, vamos alterar o arquivo de configurações do apache em <code class="highlighter-rouge">/etc/apache2/apache2.conf</code>.</p>
+
+<p>Procure a linha que contém:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>User www-data
+Group www-data
+</code></pre></div></div>
+
+<p>Se essa linha tiver igual abaixo, você tem que editar o arquivo que ele informa <code class="highlighter-rouge">/etc/apache2/envvars</code>:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code># These need to be set in /etc/apache2/envvars
+User ${APACHE_RUN_USER}
+Group ${APACHE_RUN_GROUP}
+</code></pre></div></div>
+
+<p>Então, vamos no arquivo que ele indicou, procure a linha e coloque seu nome de usuários, deverá ficar parecido com isso:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>export APACHE_RUN_USER=victor
+export APACHE_RUN_GROUP=www-data
+</code></pre></div></div>
+
+<p>E para finalizar, vamos inserir essa linha no final do arquivo <code class="highlighter-rouge">/var/www/nome_do_diretorio/wp-config.php</code> para liberar a instalação de plugins.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>define('FS_METHOD', 'direct');
+</code></pre></div></div>
+
+<p>Reinicie o servidor e teste, tudo deve estar funcionando perfeitamente.</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo service apache2 restart
+</code></pre></div></div>
+
+<p>Esses foram os passos que tive que fazer, consegui executar o básico do WordPress, o único problema que tive foi funções como slide não funcionar perfeitamente, meu notebook não tem memória e processamento suficiente para um servidor WEB. É uma pena, mas já era suficiente para iniciar a brincadeira.</p>
+:ET

@@ -1,0 +1,109 @@
+I"$<p>O <a href="https://disqus.com/" title="Oficial: Diqus" target="_blank">Disqus</a> é um serviço online que oferece uma <a href="https://pt.wikipedia.org/wiki/Disqus" title="Wikipedia: Disqus" target="_blank">plataforma</a> de discussões e postagem de comentários para sites. O Disqus ajuda a escritores aumentarem o engajamento e construir uma audiência fiel.</p>
+
+<p>Para inserir o Disqus em seu site você deve primeiramente se cadastrar no site. Após isso, em poucos minutos você já pode instalar no seu site o Disqus utilizando as opções que o próprio site fornece.</p>
+
+<p>Para instalar no Jekyll eu segui os seguintes passos desse breve tutorial:</p>
+
+<hr />
+
+<ol>
+  <li><a href="#1-criar-um-arquivo-disqushtml" title="Criar um arquivo `disqus.html`" class="js-scroll-trigger">Criar um arquivo <code class="highlighter-rouge">disqus.html</code></a></li>
+  <li><a href="#2-editar-o-arquivo-posthtml" title="Editar o arquivo `post.html`" class="js-scroll-trigger">Editar o arquivo <code class="highlighter-rouge">post.html</code></a></li>
+  <li><a href="#3-permitir-comentários-no-post" title="Permitir comentários no post" class="js-scroll-trigger">Permitir comentários no post</a></li>
+  <li><a href="#4-moderar-os-comentários" title="Moderar os comentários" class="js-scroll-trigger">Moderar os comentários</a></li>
+</ol>
+
+<hr />
+
+<h5 id="1-criar-um-arquivo-disqushtml">1. Criar um arquivo <code class="highlighter-rouge">disqus.html</code></h5>
+<p>No diretório <code class="highlighter-rouge">_includes</code> eu criei um arquivo com o seguinte conteúdo:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html"><span class="nt">&lt;div</span> <span class="na">id=</span><span class="s">"disqus_thread"</span><span class="nt">&gt;&lt;/div&gt;</span>
+<span class="nt">&lt;script </span><span class="na">type=</span><span class="s">"text/javascript"</span><span class="nt">&gt;</span>
+  
+  <span class="c1">// required: replace example with your forum shortname</span>
+
+  <span class="kd">var</span> <span class="nx">disqus_shortname</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">{{ site.disqus_shortname }}</span><span class="dl">'</span><span class="p">;</span>
+  <span class="kd">var</span> <span class="nx">disqus_identifier</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">{{ page.url }}</span><span class="dl">'</span><span class="p">;</span>
+
+  
+  <span class="cm">/* * * DON'T EDIT BELOW THIS LINE * * */</span>
+  <span class="p">(</span><span class="kd">function</span><span class="p">()</span> <span class="p">{</span>
+  <span class="kd">var</span> <span class="nx">dsq</span> <span class="o">=</span> <span class="nb">document</span><span class="p">.</span><span class="nx">createElement</span><span class="p">(</span><span class="dl">'</span><span class="s1">script</span><span class="dl">'</span><span class="p">);</span> <span class="nx">dsq</span><span class="p">.</span><span class="nx">type</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">text/javascript</span><span class="dl">'</span><span class="p">;</span> <span class="nx">dsq</span><span class="p">.</span><span class="k">async</span> <span class="o">=</span> <span class="kc">true</span><span class="p">;</span>
+  <span class="nx">dsq</span><span class="p">.</span><span class="nx">src</span> <span class="o">=</span> <span class="dl">'</span><span class="s1">//</span><span class="dl">'</span> <span class="o">+</span> <span class="nx">disqus_shortname</span> <span class="o">+</span> <span class="dl">'</span><span class="s1">.disqus.com/embed.js</span><span class="dl">'</span><span class="p">;</span>
+  <span class="p">(</span><span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="dl">'</span><span class="s1">head</span><span class="dl">'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]</span> <span class="o">||</span> <span class="nb">document</span><span class="p">.</span><span class="nx">getElementsByTagName</span><span class="p">(</span><span class="dl">'</span><span class="s1">body</span><span class="dl">'</span><span class="p">)[</span><span class="mi">0</span><span class="p">]).</span><span class="nx">appendChild</span><span class="p">(</span><span class="nx">dsq</span><span class="p">);</span>
+  <span class="p">})();</span>
+
+<span class="nt">&lt;/script&gt;</span>
+<span class="nt">&lt;noscript&gt;</span>Please enable JavaScript to view the <span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"http://disqus.com/?ref_noscript"</span><span class="nt">&gt;</span>comments powered by Disqus.<span class="nt">&lt;/a&gt;&lt;/noscript&gt;</span>
+<span class="nt">&lt;a</span> <span class="na">href=</span><span class="s">"http://disqus.com"</span> <span class="na">class=</span><span class="s">"dsq-brlink"</span><span class="nt">&gt;</span>comments powered by <span class="nt">&lt;span</span> <span class="na">class=</span><span class="s">"logo-disqus"</span><span class="nt">&gt;</span>Disqus<span class="nt">&lt;/span&gt;&lt;/a&gt;</span>
+<span class="nt">&lt;/section&gt;</span></code></pre></figure>
+
+<p>Para facilitar eu atribui para as variáveis <code class="highlighter-rouge">disqus_shortname</code> no arquivo <code class="highlighter-rouge">_config.yml</code>.<br />
+Em <code class="highlighter-rouge">page.url</code> você vai adicionar a url da página que terá a seção de comentários.</p>
+
+<hr />
+
+<h5 id="2-editar-o-arquivo-posthtml">2. Editar o arquivo <code class="highlighter-rouge">post.html</code></h5>
+
+<p>No diretório <code class="highlighter-rouge">_layouts</code> eu editei o arquivo <code class="highlighter-rouge">post.html</code> e inseri no final do post o seguinte código:</p>
+
+<figure class="highlight"><pre><code class="language-ruby" data-lang="ruby">  
+     <span class="p">{</span><span class="sx">% page.comments </span><span class="o">%</span><span class="p">}</span>
+  
+
+      <span class="o">&lt;</span><span class="n">div</span> <span class="k">class</span><span class="o">=</span><span class="s2">"row"</span><span class="o">&gt;</span>
+        <span class="o">&lt;</span><span class="n">div</span> <span class="k">class</span><span class="o">=</span><span class="s2">"col-lg-8 col-md-10 mx-auto"</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="n">div</span> <span class="k">class</span><span class="o">=</span><span class="s2">"clearfix"</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">div</span> <span class="k">class</span><span class="o">=</span><span class="s2">"comments"</span><span class="o">&gt;</span>
+
+          
+            <span class="p">{</span><span class="sx">% jekyll.environment </span><span class="o">==</span> <span class="s1">'production'</span> <span class="o">%</span><span class="p">}</span>
+          
+
+          
+                <span class="p">{{</span> <span class="kp">include</span> <span class="n">disqus</span><span class="p">.</span><span class="nf">html</span> <span class="p">}}</span>
+          
+
+          
+             <span class="p">{</span><span class="sx">% else </span><span class="o">%</span><span class="p">}</span>
+          
+
+              <span class="o">&lt;</span><span class="n">h4</span><span class="o">&gt;</span><span class="no">Disqus</span> <span class="n">coment</span><span class="err">á</span><span class="n">rios</span> <span class="n">aqui!</span><span class="o">&lt;</span><span class="sr">/h4&gt;
+
+          
+             {% endif %}
+          
+            &lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+            <span class="o">&lt;</span><span class="n">hr</span><span class="o">&gt;</span>
+          <span class="o">&lt;</span><span class="sr">/div&gt;
+          
+        &lt;/</span><span class="n">div</span><span class="o">&gt;</span>
+      <span class="o">&lt;</span><span class="sr">/div&gt;
+
+
+  {% endif %}</span></code></pre></figure>
+
+<p>Ele verifica se na página está habilitado a opção de comentários, se verdadeiro ele verifica se o jekyll está em ambiente de produção (quando ele está disponível na Internet), caso também seja verdadeiro ele inclui nessa parte da página o arquivo <code class="highlighter-rouge">disqus.html</code>. Caso o site esteja em modo de desenvolvimento irá mostrar somente uma mensagem informando onde aparecerão os comentários.</p>
+
+<hr />
+
+<h5 id="3-permitir-comentários-no-post">3. Permitir comentários no post</h5>
+
+<p>E por último basta ativar os comentários no post, em cada post você deve inserir <code class="highlighter-rouge">comments: true</code>:</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">---
+layout: post
+comments: true
+
+(...)
+
+---</code></pre></figure>
+
+<hr />
+
+<h5 id="4-moderar-os-comentários">4. Moderar os comentários</h5>
+
+<p>Pronto, após isso basta visitar a seção de <a href="https://disqus.com/admin/moderate/" title="Disqus: Moderar comentários" target="_blank">moderar</a> comentários do Disqus e acompanhar os comentários em cada página.</p>
+
+:ET

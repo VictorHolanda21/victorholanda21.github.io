@@ -1,0 +1,166 @@
+I"�"<h1 id="sumário">Sumário</h1>
+
+<hr />
+<ol>
+  <li><a href="#1-acesse-a-pasta-home" title="Acesse a pasta HOME" class="js-scroll-trigger">Acesse a pasta HOME</a></li>
+  <li><a href="#2-atualize-os-pacotes" title="Atualize os pacotes" class="js-scroll-trigger">Atualize os pacotes</a></li>
+  <li><a href="#3-instale-as-dependências" title="Instale as dependências" class="js-scroll-trigger">Instale as dependências</a></li>
+  <li><a href="#4-clone-o-repósitorio-do-ambiente-ruby-ruby-environment" title="Clone o repósitorio do ambiente Ruby" class="js-scroll-trigger">Clone o repósitorio do ambiente Ruby</a></li>
+  <li><a href="#5-adicione-nas-variáveis-de-ambiente-do-seu-sistema" title="Adicione nas variáveis de ambiente do seu sistema" class="js-scroll-trigger">Adicione nas variáveis de ambiente do seu sistema</a></li>
+  <li><a href="#6-agora-clone-e-adicione-nas-variáveis-de-ambiente-o-ruby-build" title="Agora clone e adicione nas variáveis de ambiente o 'ruby-build'" class="js-scroll-trigger">Clone e adicione nas variáveis de ambiente o ‘ruby-build’</a></li>
+  <li><a href="#7-verifique-se-o-rbenv-está-configurado-corretamente" title="Verifique se o rbenv está configurado corretamente" class="js-scroll-trigger">Verifique se o rbenv está configurado corretamente</a></li>
+  <li><a href="#8-instale-todas-as-versões-disponíveis-do-ruby" title="Instale todas as versões disponíveis do Ruby" class="js-scroll-trigger">Instale todas as versões disponíveis do Ruby</a></li>
+  <li><a href="#9-agora-instale-o-ruby-264" title="instale o Ruby 2.6.4" class="js-scroll-trigger">Instale o Ruby 2.6.4</a></li>
+  <li><a href="#10-instale-o-bundler" title="Instale o Bundler" class="js-scroll-trigger">Instale o Bundler</a></li>
+  <li><a href="#11-instale-o-rubygem" title="Instale o rubygems" class="js-scroll-trigger">Instale o rubygems</a></li>
+  <li><a href="#12-instale-o-jekyll" title="Instale o Jekyll" class="js-scroll-trigger">Instale o Jekyll</a></li>
+  <li><a href="#13-teste-rodando-um-projeto" title="Teste rodando um projeto" class="js-scroll-trigger">Teste rodando um projeto</a></li>
+  <li><a href="#14-clone-meu-projeto" title="Clone meu projeto" class="js-scroll-trigger">Clone meu projeto</a></li>
+  <li><a href="#15-atualize-as-gems" title="Atualize as gems" class="js-scroll-trigger">Atualize as gems</a></li>
+  <li><a href="#16-rode-o-projeto" title="Rode o projeto" class="js-scroll-trigger">Rode o projeto</a></li>
+  <li><a href="#15-links" title="Links" class="js-scroll-trigger">Links</a></li>
+</ol>
+
+<hr />
+
+<h5 id="1-acesse-a-pasta-home">1. Acesse a pasta HOME</h5>
+
+<p>Usando o terminal do seu sistema, vá para o diretório HOME do seu computador:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>cd $HOME
+</code></pre></div></div>
+
+<h5 id="2-atualize-os-pacotes">2. Atualize os pacotes:</h5>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get update 
+</code></pre></div></div>
+
+<h5 id="3-instale-as-dependências">3. Instale as dependências:</h5>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>sudo apt-get install git-core curl zlib1g-dev build-essential libssl-dev libreadline-dev libyaml-dev libsqlite3-dev sqlite3 libxml2-dev libxslt1-dev libcurl4-openssl-dev libffi-dev
+</code></pre></div></div>
+
+<h5 id="4-clone-o-repósitorio-do-ambiente-ruby-ruby-environment">4. Clone o repósitorio do ambiente Ruby (Ruby environment):</h5>
+
+<p><em>O rbenv serve para preparar seu ambiente para diferentes versões do Ruby e garantir que o seu ambiente de desenvolvimento corresponda com o de produção.</em></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/rbenv/rbenv.git ~/.rbenv
+
+</code></pre></div></div>
+
+<h5 id="5-adicione-nas-variáveis-de-ambiente-do-seu-sistema">5. Adicione nas variáveis de ambiente do seu sistema:</h5>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>echo 'export PATH="$HOME/.rbenv/bin:$PATH"' &gt;&gt; ~/.bashrc
+echo 'eval "$(rbenv init -)"' &gt;&gt; ~/.bashrc
+exec $SHELL
+</code></pre></div></div>
+
+<h5 id="6-agora-clone-e-adicione-nas-variáveis-de-ambiente-o-ruby-build">6. Agora clone e adicione nas variáveis de ambiente o ‘ruby-build’:</h5>
+
+<p><em>O ruby-build é um utilitário de linha de comando que torna fácil instalar virtualmente qualquer versão do Ruby, da fonte.</em>
+<em>É um disponibilizado como um plugin para o rbenv que providencia o rbenv comandos de instalação, ou como um programa autônomo.</em></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/rbenv/ruby-build.git ~/.rbenv/plugins/ruby-build
+echo 'export PATH="$HOME/.rbenv/plugins/ruby-build/bin:$PATH"' &gt;&gt; ~/.bashrc
+exec $SHELL
+</code></pre></div></div>
+
+<h5 id="7-verifique-se-o-rbenv-está-configurado-corretamente">7. Verifique se o rbenv está configurado corretamente:</h5>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>type rbenv
+
+</code></pre></div></div>
+
+<p>Você terá um resultado parecido com esse:</p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rbenv é uma função
+rbenv () 
+{ 
+    local command;
+    command="${1:-}";
+    if [ "$#" -gt 0 ]; then
+        shift;
+    fi;
+    case "$command" in 
+        rehash | shell)
+            eval "$(rbenv "sh-$command" "$@")"
+        ;;
+        *)
+            command rbenv "$command" "$@"
+        ;;
+    esac
+}
+</code></pre></div></div>
+
+<h5 id="8-instale-todas-as-versões-disponíveis-do-ruby">8. Instale todas as versões disponíveis do Ruby:</h5>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rbenv install -l
+</code></pre></div></div>
+
+<p>Não se assuste pois irá aparecer uma lista extensa no seu terminal.</p>
+
+<h5 id="9-agora-instale-o-ruby-264">9. Agora instale o Ruby 2.6.4:</h5>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>rbenv install 2.6.4
+rbenv global 2.6.4
+ruby -v
+</code></pre></div></div>
+<p>Essa era a versão na data da minha instalação.</p>
+
+<p><strong>A instalação do Ruby pode ser um processo longo (mais ou menos 30 minutos), então esteja preparado.</strong></p>
+
+<h5 id="10-instale-o-bundler">10. Instale o Bundler:</h5>
+
+<p><em>O Bundler providência um consistente ambiente para os projetos Ruby para rastreamento e instalação das gems exatas e versões que são necessárias.</em></p>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem install bundler
+rbenv rehash
+</code></pre></div></div>
+
+<h5 id="11-instale-o-rubygems">11. Instale o rubygems:</h5>
+
+<p><em>O rubygems é um gerenciador de pacotes para a linguagem Ruby que provê um formato padrão para a distribuição de programas e bibliotecas em um formato autosuficiente chamado de gem.</em></p>
+
+<p>sudo apt-get install rubygems</p>
+
+<h5 id="12-instale-o-jekyll">12. Instale o Jekyll:</h5>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>gem install jekyll
+
+</code></pre></div></div>
+
+<p><strong>Mais demora, então continue preparado.</strong></p>
+
+<h5 id="13-teste-rodando-um-projeto">13. Teste rodando um projeto:</h5>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>$ jekyll new my-awesome-site
+$ cd my-awesome-site
+$ bundle exec jekyll serve
+# =&gt; Now browse to http://localhost:4000
+</code></pre></div></div>
+
+<p><strong>Seu projeto está no ar \o/ .</strong></p>
+
+<h5 id="14-clone-meu-projeto">14. Clone meu projeto:</h5>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>git clone https://github.com/VictorHolanda21/victorholanda21.github.io.git ; cd victorholanda21.github.io/
+
+</code></pre></div></div>
+<h5 id="15-atualize-as-gems">15. Atualize as gems:</h5>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle update
+</code></pre></div></div>
+<h5 id="16-rode-o-projeto">16. Rode o projeto:</h5>
+
+<div class="highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bundle exec jekyll serve
+</code></pre></div></div>
+
+<h5 id="17-links">17. Links:</h5>
+
+<ul>
+  <li><a href="https://www.digitalocean.com/community/tutorials/how-to-install-ruby-on-rails-with-rbenv-on-ubuntu-18-04-pt">Digital Ocean: how-to-install-ruby-on-rails-with-rbenv-on-ubuntu-18-04-pt</a></li>
+  <li><a href="https://stackoverflow.com/questions/37720892/you-dont-have-write-permissions-for-the-var-lib-gems-2-3-0-directory">Stack overflow: you-dont-have-write-permissions-for-the-var-lib-gems-2-3-0-directory</a></li>
+  <li><a href="https://www.ruby-lang.org/pt/">Ruby</a></li>
+  <li><a href="https://jekyllrb.com/">Jekyllrb</a></li>
+</ul>
+:ET

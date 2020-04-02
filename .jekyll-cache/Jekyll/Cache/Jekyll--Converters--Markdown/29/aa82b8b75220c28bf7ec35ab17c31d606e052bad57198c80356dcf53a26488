@@ -1,0 +1,125 @@
+I"�,<p>Meta tags são linhas de código HTML que descrevem o conteúdo do site para os buscadores (Google, Bing, etc.). As meta tags não irão ser visualizadas na página, mas os robôs de pesquisas poderão visualizar as informações contidas dentro dessas meta tags.</p>
+
+<p>As meta tags são tipicamentes usadas para especificar descrição da página, palavras-chaves, autor do documento, última modificação, e etc.. Elas podem ser utilizadas por navegadores para, por exemplo, informar ao navegador como apresentar as informações contidas naquela página, ou recarregar a página para obter informações atualizadas. Os mecanismos de buscas podem coletar as informações e facilitar, por exemplo, no posicionamento de sua página web nos resultados das buscas de internet.</p>
+
+<p>Portanto, as meta tags são uma das técnicas utilizadas em estratégias de <a href="https://marketingdeconteudo.com/o-que-e-seo/" title="Marketing de conteudo: O que é SEO?" target="_blank">SEO</a> que significa Search Engine Optimization (Otimização para mecanismos de busca) que permite o melhor posicionamento dos sites/blogs nos buscadores.</p>
+
+<p>As meta tags <code class="highlighter-rouge">&lt;meta&gt;</code> são sempre inseridas dentro do elemento <code class="highlighter-rouge">&lt;head&gt;</code>. Além disso, meta tags sempre recebem um par de nome e valor.</p>
+
+<p>As meta tags utilizadas neste blog, que serão dividas em 4 partes, são as seguintes:</p>
+
+<hr />
+
+<ol>
+  <li><a href="#1-meta-tags-básicas" title="Meta tags básicas" class="js-scroll-trigger">Meta tags básicas</a></li>
+  <li><a href="#2-meta-tags-do-open-graph-protocol" title="Meta tags do Open Graph protocol" class="js-scroll-trigger">Meta tags do Open Graph protocol</a></li>
+  <li><a href="#3-meta-tags-voltadas-para-artigos" title="Meta tags voltadas para artigos" class="js-scroll-trigger">Meta tags voltadas para artigos</a></li>
+  <li><a href="#4-meta-tags-para-imagens" title="Meta tags para imagens" class="js-scroll-trigger">Meta tags para imagens</a></li>
+</ol>
+
+<hr />
+
+<h5 id="1-meta-tags-básicas">1. Meta tags básicas</h5>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">1.	<span class="nt">&lt;meta</span> <span class="na">charset=</span><span class="s">"utf-8"</span><span class="nt">&gt;</span>
+2.	<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"viewport"</span> <span class="na">content=</span><span class="s">"width=device-width, initial-scale=1, shrink-to-fit=no"</span><span class="nt">&gt;</span>
+3.	<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"description"</span> <span class="na">content=</span><span class="s">"Amante de tecnologia, gestão e projetos. Com dedicação, sigo em busca de alcançar todos os meus objetivos pessoais, acadêmicos e profissionais."</span><span class="nt">&gt;</span>
+4.	<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"author"</span> <span class="na">content=</span><span class="s">"Victor Holanda"</span><span class="nt">&gt;</span>
+5.	<span class="nt">&lt;meta</span> <span class="na">name=</span><span class="s">"keywords"</span> <span class="na">content=</span><span class="s">"Blog Pessoal, Victor Holanda, Administração, Tecnologia, Teresina, Piaui"</span><span class="nt">&gt;</span></code></pre></figure>
+
+<ol>
+  <li>
+    <p>É referente ao tipo de codificação dos caracteres da página, o <a href="https://pt.wikipedia.org/wiki/UTF-8" title="Wikipedia: UTF-8" target="_blank"><code class="highlighter-rouge">utf-8</code></a> é uma codificação padrão para email, páginas web e outros locais onde os caracteres são armazenados, essa codificação permite basicamente que caracteres com <a href="https://pt.wikipedia.org/wiki/Diacr%C3%ADtico" title="Wikipedia: diacrítico" target="_blank">diacríticos</a>, ou seja, com sinais gráficos como acentos, sejam visualizados de forma correta.</p>
+  </li>
+  <li>
+    <p>Trata do <a href="https://tableless.com.br/manipulando-metatag-viewport/" title="Tableless: Manipulando a metatag Viewport" target="_blank">viewport</a>, ou a área onde o site aparece. É a área branca da janela quando é aberta o navegador. O viewport  sempre vai ter o tamanho da janela, mas as formas que serão renderizados vai depender bastante do dispositivo. Os valores de content pode ser os que seguem abaixo:</p>
+
+    <p>a. <strong>width</strong>: Define uma largura para o viewport. Os valores podem ser em PX ou “device-width”, que determina automaticamente um valor igual a largura da tela do dispositivo.</p>
+
+    <p>b. <strong>height</strong>: Define uma altura para o viewport. Os valores podem ser em PX ou “device-height”, que determina automaticamente um valor igual a altura da tela do dispositivo.</p>
+
+    <p>c. <strong>initial-scale</strong>: Define a escala inicial do viewport.</p>
+
+    <p>d. <strong>user-scalable</strong>: Define a possibilidade de o usuário fazer “zoom” em um determinado lugar da tela. É ativado quando o usuário bate duas vezes com o dedo em um lugar da tela.</p>
+
+    <p>e. <strong>shrink-to-fit</strong>: Previne que a página seja escalado para caber no viewport em navegadores Safari. Omitir essa irá gerar uma alerta no navegador.</p>
+  </li>
+  <li>
+    <p>Define a descrição básica da página. Em algumas situações parte dessa descrição é utilizada em resultados de buscas.</p>
+  </li>
+  <li>
+    <p>Nome do autor da página.</p>
+  </li>
+  <li>
+    <p>Palavras-chaves da página. Termos mais importantes que podem ser usadas para facilitar nos resultados dos buscadores.</p>
+  </li>
+</ol>
+
+<p>Você pode usar  outras tags específicas para o buscador do <a href="https://support.google.com/webmasters/answer/79812?hl=pt-BR" title="Metatags que o Google entende" target="_blank">Google</a> que controlam o comportamento do rastreamento e indexação das páginas, tradução automática e etc..</p>
+
+<hr />
+
+<h5 id="2-meta-tags-do-open-graph-protocol">2. Meta tags do Open Graph protocol</h5>
+
+<p>O <a href="http://ogp.me/" title="Open Graph protocol" target="_blank">protocolo Open Graph</a> permite que qualquer página da web seja visualizado como um post normal do Facebook.</p>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">     <span class="c">&lt;!-- Meta Tags Open Graph Protocol. See more: http://ogp.me/ --&gt;</span>
+
+1.     <span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:locale"</span> <span class="na">content=</span><span class="s">"pt_BR"</span><span class="nt">&gt;</span>  
+1.1.   <span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:locale:alternate"</span> <span class="na">content=</span><span class="s">"en_US"</span><span class="nt">&gt;</span>
+1.2.   <span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:locale:alternate"</span> <span class="na">content=</span><span class="s">"es_ES"</span><span class="nt">&gt;</span>
+2.     <span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:site_name"</span> <span class="na">content=</span><span class="s">"Victor Holanda"</span><span class="nt">&gt;</span>
+3.     <span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:title"</span> <span class="na">content=</span><span class="s">"Utilizando Meta Tags |  Victor Holanda"</span><span class="nt">&gt;</span>
+4.     <span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:url"</span> <span class="na">content=</span><span class="s">"http://victorholanda21.github.io/tecnologia/2017/11/12/utilizando-meta-tags.html"</span><span class="nt">&gt;</span></code></pre></figure>
+
+<ol>
+  <li>Define o local do seu site, o padrão é <code class="highlighter-rouge">en_US</code>.<br />
+1.1 e 1.2 Definem locais alternativos.</li>
+  <li>Nome do site.</li>
+  <li>Título da página.</li>
+  <li>Endereço da página.</li>
+</ol>
+
+<hr />
+
+<h5 id="3-meta-tags-voltadas-para-artigos">3. Meta tags voltadas para artigos</h5>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">1.     <span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:type"</span> <span class="na">content=</span><span class="s">"article"</span><span class="nt">&gt;</span>
+2.     <span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"article:author"</span> <span class="na">content=</span><span class="s">"Victor Holanda"</span><span class="nt">&gt;</span>
+3.     <span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"article:section"</span> <span class="na">content=</span><span class="s">"Tecnologia"</span><span class="nt">&gt;</span>
+4.     <span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"article:tag"</span> <span class="na">content=</span><span class="s">"meta tags, tutorial"</span><span class="nt">&gt;</span>
+5.     <span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"article:published_time"</span> <span class="na">content=</span><span class="s">"2017-11-12"</span><span class="nt">&gt;</span>
+5.     <span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"article:modified_time"</span> <span class="na">content=</span><span class="s">"2017-11-12"</span><span class="nt">&gt;</span>
+7.     <span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:description"</span> <span class="na">content=</span><span class="s">"O que é e como usar?"</span><span class="nt">&gt;</span>
+
+ </code></pre></figure>
+
+<ol>
+  <li>Tipo da página, pode ser “article”, “book” ou “profile”.</li>
+  <li>Autor do artigo.</li>
+  <li>Qual a categoria do artigo.</li>
+  <li>Tópicos referente ao artigo.</li>
+  <li>Data da publicação.</li>
+  <li>Data da modificação.</li>
+  <li>Descrição do artigo.</li>
+</ol>
+
+<hr />
+
+<h5 id="4-meta-tags-para-imagens">4. Meta tags para imagens</h5>
+
+<figure class="highlight"><pre><code class="language-html" data-lang="html">1.    <span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:image"</span> <span class="na">content=</span><span class="s">"https://avatars3.githubusercontent.com/u/12675056?s=400&amp;u=75e88e527d6365ce28f32f239e4ef9ee8ae88190&amp;v=4"</span><span class="nt">&gt;</span>
+2.    <span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:image:type"</span> <span class="na">content=</span><span class="s">"image/jpg"</span><span class="nt">&gt;</span>
+3.    <span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:image:width"</span> <span class="na">content=</span><span class="s">"460"</span><span class="nt">&gt;</span>
+4.    <span class="nt">&lt;meta</span> <span class="na">property=</span><span class="s">"og:image:height"</span> <span class="na">content=</span><span class="s">"460"</span><span class="nt">&gt;</span></code></pre></figure>
+
+<ol>
+  <li>Imagem da página quando for compartilhada, eu particularmente utilizo a minha foto.</li>
+  <li>Tipo da imagem.</li>
+  <li>Largura da imagem definida em 460 px.</li>
+  <li>Altura da imagem definida em 460px.</li>
+</ol>
+
+<p>Essas são só as meta tags utilizadas nesse post.</p>
+
+:ET
